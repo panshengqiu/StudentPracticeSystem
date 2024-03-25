@@ -8,6 +8,8 @@
       <directory url="file://$PROJECT_DIR$/../enterprise-register/src/main/resources/archetype-resources" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/../hr-register/src/main/resources/archetype-resources" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/../manager-identify/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/../manager-login/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/../parent-module/src/main/resources/archetype-resources" includeSubdirectories="true" />
     </excludeFromCompile>
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
@@ -25,13 +27,15 @@
         <module name="result-module" />
         <module name="jwt-utils" />
         <module name="entity" />
+        <module name="manager-login" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="11" />
+    <bytecodeTargetLevel target="17" />
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="ali-oss-utils" options="-parameters" />
+      <module name="manager-login" options="-parameters" />
       <module name="practice" options="-parameters" />
     </option>
   </component>

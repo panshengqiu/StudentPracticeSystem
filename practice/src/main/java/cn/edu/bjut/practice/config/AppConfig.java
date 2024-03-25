@@ -1,5 +1,6 @@
 package cn.edu.bjut.practice.config;
 
+import cn.edu.bjut.entity.manager.Manager;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import cn.edu.bjut.oss.AliOSSProperties;
@@ -15,6 +16,10 @@ public class AppConfig {
     @Bean
     public AliOSSProperties aliOSSProperties(){
         return new AliOSSProperties();
+    }
+    public void test(){
+//        new ManagerLoginMapper(new Manager());
+        new Manager();
     }
 }
 
