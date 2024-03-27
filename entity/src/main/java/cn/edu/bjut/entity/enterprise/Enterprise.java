@@ -13,5 +13,6 @@ public class Enterprise {
     private String name;
     private String address;
     private String description;
-    private String logo_url;
+    private String logoUrl;
+    private String creditCode;
 }

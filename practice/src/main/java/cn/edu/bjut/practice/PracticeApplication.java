@@ -7,7 +7,8 @@ import org.springframework.context.annotation.ComponentScan;
 
 @MapperScan("cn.edu.bjut.managerlogin.mapper")
 @MapperScan("cn.edu.bjut.practice.mapper")
-@SpringBootApplication(scanBasePackages = {"cn.edu.bjut.practice", "cn.edu.bjut.interceptor", "cn.edu.bjut.result","cn.edu.bjut.managerlogin"})
+@MapperScan("cn.edu.bjut.enterpriseregister.mapper")
+@SpringBootApplication(scanBasePackages = {"cn.edu.bjut.practice", "cn.edu.bjut.interceptor", "cn.edu.bjut.result","cn.edu.bjut.managerlogin","cn.edu.bjut.enterpriseregister"})
 public class PracticeApplication {
 
 	public static void main(String[] args) {

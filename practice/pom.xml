@@ -27,6 +27,12 @@
 		</dependency>
 
 		<dependency>
+			<groupId>org.example</groupId>
+			<artifactId>enterprise-register</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
 			<groupId>cn.edu.bjut</groupId>
 			<artifactId>result-module</artifactId>
 			<version>1.0-SNAPSHOT</version>

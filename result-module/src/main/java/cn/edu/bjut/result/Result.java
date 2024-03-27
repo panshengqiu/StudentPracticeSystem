@@ -23,6 +23,6 @@ public class Result {
     }
     //失败响应
     public static Result error(String msg){
-        return new Result(0,msg,null);
+        return new Result(0,"error",msg);
     }
 }
