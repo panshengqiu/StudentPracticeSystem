@@ -15,4 +15,5 @@ public class Enterprise {
     private String description;
     private String logoUrl;
     private String creditCode;
+    private String status;
 }

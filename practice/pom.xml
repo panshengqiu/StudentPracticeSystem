@@ -19,6 +19,11 @@
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>org.example</groupId>
+			<artifactId>hr-register</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
 
 		<dependency>
 			<groupId>cn.edu.bjut</groupId>
@@ -61,6 +66,10 @@
 			<groupId>cn.edu.bjut</groupId>
 			<artifactId>ali-oss-utils</artifactId>
 			<version>1.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-autoconfigure</artifactId>
 		</dependency>
 
 	</dependencies>

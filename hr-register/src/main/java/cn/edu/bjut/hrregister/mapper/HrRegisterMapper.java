@@ -1,12 +1,17 @@
-package cn.edu.bjut.hrregister.service;
+package cn.edu.bjut.hrregister.mapper;
 
 import cn.edu.bjut.entity.enterprise.Enterprise;
 import cn.edu.bjut.entity.hr.HumanResource;
 import cn.edu.bjut.entity.manager.RegisterApproval;
+import org.apache.ibatis.annotations.Mapper;
 
-public interface HrRegisterService {
+@Mapper
+public interface HrRegisterMapper {
     public int register(int id, String username, String password);
-    public String isFirmRegister(String name, String creditCode);
+
+    public String firmIsRegister(String name, String creditCode);
+
     public String isFirmApproval(String name, String creditCode);
-    public int getEnterpriseId(String name, String creditCode);
+
+    public int selectEnterpriseId(String name, String creditCode);
 }

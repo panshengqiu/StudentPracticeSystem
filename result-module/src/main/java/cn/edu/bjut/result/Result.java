@@ -22,7 +22,7 @@ public class Result {
         return new Result(1,"success",data);
     }
     //失败响应
-    public static Result error(String msg){
-        return new Result(0,"error",msg);
+    public static Result error(String data){
+        return new Result(0,"error",data);
     }
 }
