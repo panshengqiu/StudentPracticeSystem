@@ -8,6 +8,8 @@ import cn.edu.bjut.hrregister.service.HrRegisterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class HrRegisterImpl implements HrRegisterService {
 
@@ -31,5 +33,13 @@ public class HrRegisterImpl implements HrRegisterService {
     @Override
     public int getEnterpriseId(String name, String creditCode) {
         return hrRegisterMapper.selectEnterpriseId(name, creditCode);
+    }
+
+    @Override
+    public boolean checkHrUsername(String username) {
+        HumanResource humanResource = hrRegisterMapper.selectHrUsername(username);
+        if(humanResource != null)
+            return false;
+        else return true;
     }
 }

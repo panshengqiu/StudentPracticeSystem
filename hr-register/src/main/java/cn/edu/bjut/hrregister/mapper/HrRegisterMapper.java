@@ -5,6 +5,8 @@ import cn.edu.bjut.entity.hr.HumanResource;
 import cn.edu.bjut.entity.manager.RegisterApproval;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 @Mapper
 public interface HrRegisterMapper {
     public int register(int id, String username, String password);
@@ -14,4 +16,6 @@ public interface HrRegisterMapper {
     public String isFirmApproval(String name, String creditCode);
 
     public int selectEnterpriseId(String name, String creditCode);
+
+    public HumanResource selectHrUsername(String username);
 }
