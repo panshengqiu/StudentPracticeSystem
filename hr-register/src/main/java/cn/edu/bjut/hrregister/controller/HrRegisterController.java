@@ -4,9 +4,10 @@ package cn.edu.bjut.hrregister.controller;
 import cn.edu.bjut.hrregister.service.HrRegisterService;
 import cn.edu.bjut.result.Result;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 public class HrRegisterController {
@@ -44,5 +45,13 @@ public class HrRegisterController {
             return Result.success("恭喜您，注册成功，请前往登入界面！");
         }
         return Result.error("注册失败，请联系系统管理员！");
+    }
+
+    @GetMapping("/checkHrUsername")
+    public Result checkHrUsername(@RequestParam("username") String username){
+
+        boolean available = hrRegisterService.checkHrUsername(username);
+        System.out.println("available:"+available);
+        return Result.result(available);
     }
 }

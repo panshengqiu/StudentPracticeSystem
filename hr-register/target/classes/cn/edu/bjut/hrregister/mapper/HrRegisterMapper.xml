@@ -19,4 +19,7 @@
     <select id="selectEnterpriseId" resultType="java.lang.Integer">
         select id from enterprise where name=#{name} and credit_code=#{creditCode};
     </select>
+    <select id="selectHrUsername" resultType="cn.edu.bjut.entity.hr.HumanResource">
+        select * from human_resource where username=#{username};
+    </select>
 </mapper>

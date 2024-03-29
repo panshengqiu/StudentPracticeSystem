@@ -9,4 +9,6 @@ public interface HrRegisterService {
     public String isFirmRegister(String name, String creditCode);
     public String isFirmApproval(String name, String creditCode);
     public int getEnterpriseId(String name, String creditCode);
+
+    public boolean checkHrUsername(String username);
 }
