@@ -6,4 +6,36 @@
   <version>1.0-SNAPSHOT</version>
   <name>Archetype - student-register</name>
   <url>http://maven.apache.org</url>
+    <dependencies>
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>jwt-utils</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>cn.edu.bjut</groupId>
+            <artifactId>result-module</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>entity</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>6.1.4</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>3.5.14</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
 </project>

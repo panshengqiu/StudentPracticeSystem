@@ -13,6 +13,9 @@ public class Result {
     private String msg;  //响应信息 描述字符串
     private Object data; //返回的数据
 
+    public Result(String success, String studentRegisteredSuccessfully) {
+    }
+
 
     //增删改 成功响应
     public static Result success(){
