@@ -1,0 +1,33 @@
+server:
+  port: 8081
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test
+    username: root
+    password: '15985527670'
+
+  servlet:
+    multipart:
+      max-file-size: 30MB
+      max-request-size: 30MB
+
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+
+
+aliyun:
+  oss:
+    endpoint: https://oss-cn-beijing.aliyuncs.com
+    accessKeyId: LTAI5tRi3XCBJXipE3VjZRjC
+    accessKeySecret: t7e0McAwkNBxdjUcssrlXAu0KL6XbG
+    bucketName: practice-springboot-web
+
+
+# spring 事务日志管理
+logging:
+  level:
+    org.springframework.jdbc.support.JdbcTransactionManager: debug

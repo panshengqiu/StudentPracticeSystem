@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>潘生秋的个人网站</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .welcome-message {
+            text-align: center;
+            color: #333;
+        }
+
+        .welcome-message h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0;
+        }
+
+        .welcome-message p {
+            font-size: 1.5rem;
+            margin-top: 0;
+        }
+
+        .animation-area {
+            z-index: 1; /* 更新的部分 */
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+        }
+
+        .box {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background: #4caf50;
+            animation: move 5s infinite linear;
+        }
+
+        @keyframes move {
+            0% {
+                transform: scale(1) translate(-50%, -50%);
+            }
+            50% {
+                transform: scale(1.5) translate(50vw, 50vh);
+            }
+            100% {
+                transform: scale(1) translate(-50%, -50%);
+            }
+        }
+
+        .links {
+            z-index: 10; /* 更新的部分 */
+            position: relative; /* 更新的部分 */
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .links a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+            font-size: 1.2rem;
+        }
+
+        .links a:hover {
+            color: #4caf50;
+        }
+    </style>
+</head>
+<body>
+
+<div class="animation-area">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+</div>
+<div>
+    <div class="welcome-message">
+        <h1>欢迎来到潘生秋个人网站</h1>
+        <p>探索创意与技术的融合之美</p>
+    </div>
+    <br>
+    <div class="links">
+        <a href="https://github.com/panshengqiu" target="_blank">GitHub</a>
+        <a href="https://cas.bjut.edu.cn/" target="_blank">BJUT</a>
+    </div>
+</div>
+
+
+<script>
+    for (let i = 0; i < 30; i++) {
+        const box = document.createElement('div');
+        box.classList.add('box');
+        document.querySelector('.animation-area').appendChild(box);
+    }
+
+    function randomValues() {
+        const size = Math.floor(Math.random() * 50) + 'px';
+        const position = Math.random() * 100 + 'vw';
+        const delay = Math.random() * -20 + 's';
+        const duration = Math.random() * 5 + 5 + 's';
+        return { size, position, delay, duration };
+    }
+
+    document.querySelectorAll('.box').forEach(box => {
+        const values = randomValues();
+        box.style.width = values.size;
+        box.style.height = values.size;
+        box.style.left = values.position;
+        box.style.animationDelay = values.delay;
+        box.style.animationDuration = values.duration;
+    });
+</script>
+
+</body>
+</html>
