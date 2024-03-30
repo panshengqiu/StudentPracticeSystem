@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 D:\desktop\FilePrograme\IDEA2023\IEDAworkspace\StudentPracticeSystem\entity\src\main\java\cn\edu\bjut\entity\student\exprience\ProjectExperience.java
 D:\desktop\FilePrograme\IDEA2023\IEDAworkspace\StudentPracticeSystem\entity\src\main\java\cn\edu\bjut\entity\student\exprience\VolunteerExperience.java
 D:\desktop\FilePrograme\IDEA2023\IEDAworkspace\StudentPracticeSystem\entity\src\main\java\cn\edu\bjut\entity\student\performance\Score.java
@@ -21,3 +22,28 @@ D:\desktop\FilePrograme\IDEA2023\IEDAworkspace\StudentPracticeSystem\entity\src\
 D:\desktop\FilePrograme\IDEA2023\IEDAworkspace\StudentPracticeSystem\entity\src\main\java\cn\edu\bjut\entity\student\performance\Honor.java
 D:\desktop\FilePrograme\IDEA2023\IEDAworkspace\StudentPracticeSystem\entity\src\main\java\cn\edu\bjut\entity\student\other\Resume.java
 D:\desktop\FilePrograme\IDEA2023\IEDAworkspace\StudentPracticeSystem\entity\src\main\java\cn\edu\bjut\entity\student\performance\Certification.java
+=======
+D:\desktop\FilePrograme\IDEA2023\IEDAworkspace\springboot-web-practice\entity\src\main\java\cn\edu\bjut\entity\ChatRecord.java
+D:\desktop\FilePrograme\IDEA2023\IEDAworkspace\springboot-web-practice\entity\src\main\java\cn\edu\bjut\entity\hr\HumanResource.java
+D:\desktop\FilePrograme\IDEA2023\IEDAworkspace\springboot-web-practice\entity\src\main\java\cn\edu\bjut\entity\student\exprience\OrganizationExperience.java
+D:\desktop\FilePrograme\IDEA2023\IEDAworkspace\springboot-web-practice\entity\src\main\java\cn\edu\bjut\entity\student\other\Submit.java
+D:\desktop\FilePrograme\IDEA2023\IEDAworkspace\springboot-web-practice\entity\src\main\java\cn\edu\bjut\entity\enterprise\Enterprise.java
+D:\desktop\FilePrograme\IDEA2023\IEDAworkspace\springboot-web-practice\entity\src\main\java\cn\edu\bjut\entity\post\PostSmallType.java
+D:\desktop\FilePrograme\IDEA2023\IEDAworkspace\springboot-web-practice\entity\src\main\java\cn\edu\bjut\entity\hr\ResumeApproval.java
+D:\desktop\FilePrograme\IDEA2023\IEDAworkspace\springboot-web-practice\entity\src\main\java\cn\edu\bjut\entity\student\exprience\ProjectExperience.java
+D:\desktop\FilePrograme\IDEA2023\IEDAworkspace\springboot-web-practice\entity\src\main\java\cn\edu\bjut\entity\student\other\IntendedPost.java
+D:\desktop\FilePrograme\IDEA2023\IEDAworkspace\springboot-web-practice\entity\src\main\java\cn\edu\bjut\entity\student\performance\Certification.java
+D:\desktop\FilePrograme\IDEA2023\IEDAworkspace\springboot-web-practice\entity\src\main\java\cn\edu\bjut\entity\post\PostBigType.java
+D:\desktop\FilePrograme\IDEA2023\IEDAworkspace\springboot-web-practice\entity\src\main\java\cn\edu\bjut\entity\student\performance\Honor.java
+D:\desktop\FilePrograme\IDEA2023\IEDAworkspace\springboot-web-practice\entity\src\main\java\cn\edu\bjut\entity\student\other\Resume.java
+D:\desktop\FilePrograme\IDEA2023\IEDAworkspace\springboot-web-practice\entity\src\main\java\cn\edu\bjut\entity\manager\Manager.java
+D:\desktop\FilePrograme\IDEA2023\IEDAworkspace\springboot-web-practice\entity\src\main\java\cn\edu\bjut\entity\student\other\Student.java
+D:\desktop\FilePrograme\IDEA2023\IEDAworkspace\springboot-web-practice\entity\src\main\java\cn\edu\bjut\entity\student\other\StudyInformation.java
+D:\desktop\FilePrograme\IDEA2023\IEDAworkspace\springboot-web-practice\entity\src\main\java\cn\edu\bjut\entity\student\performance\Score.java
+D:\desktop\FilePrograme\IDEA2023\IEDAworkspace\springboot-web-practice\entity\src\main\java\cn\edu\bjut\entity\manager\RegisterApproval.java
+D:\desktop\FilePrograme\IDEA2023\IEDAworkspace\springboot-web-practice\entity\src\main\java\cn\edu\bjut\entity\post\Post.java
+D:\desktop\FilePrograme\IDEA2023\IEDAworkspace\springboot-web-practice\entity\src\main\java\cn\edu\bjut\entity\student\exprience\PracticeExperience.java
+D:\desktop\FilePrograme\IDEA2023\IEDAworkspace\springboot-web-practice\entity\src\main\java\cn\edu\bjut\entity\student\exprience\VolunteerExperience.java
+D:\desktop\FilePrograme\IDEA2023\IEDAworkspace\springboot-web-practice\entity\src\main\java\cn\edu\bjut\entity\student\performance\Skill.java
+D:\desktop\FilePrograme\IDEA2023\IEDAworkspace\springboot-web-practice\entity\src\main\java\cn\edu\bjut\entity\hr\Releases.java
+>>>>>>> origin/main

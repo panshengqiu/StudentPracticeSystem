@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>cn.edu.bjut</groupId>
+		<artifactId>parent-module</artifactId>
+		<version>1.0-SNAPSHOT</version>
+		<relativePath>../parent-module/pom.xml</relativePath>
+	</parent>
+
+	<artifactId>practice</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>practice</name>
+	<description>Demo project for Spring Boot</description>
+
+	<properties>
+		<java.version>17</java.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.example</groupId>
+			<artifactId>hr-register</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>cn.edu.bjut</groupId>
+			<artifactId>manager-login</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.example</groupId>
+			<artifactId>enterprise-register</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>cn.edu.bjut</groupId>
+			<artifactId>result-module</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>cn.edu.bjut</groupId>
+			<artifactId>interceptor-module</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+
+<!--		<dependency>-->
+<!--			<groupId>org.example</groupId>-->
+<!--			<artifactId>ali-oss-utils</artifactId>-->
+<!--			<version>1.0-SNAPSHOT</version>-->
+<!--		</dependency>-->
+
+
+		<dependency>
+			<groupId>org.example</groupId>
+			<artifactId>entity</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>cn.edu.bjut</groupId>
+			<artifactId>ali-oss-utils</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-autoconfigure</artifactId>
+		</dependency>
+
+	</dependencies>
+</project>
