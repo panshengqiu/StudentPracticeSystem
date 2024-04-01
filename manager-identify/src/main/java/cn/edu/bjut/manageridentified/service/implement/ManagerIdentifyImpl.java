@@ -1,6 +1,7 @@
 package cn.edu.bjut.manageridentified.service.implement;
 
 import cn.edu.bjut.entity.enterprise.Enterprise;
+import cn.edu.bjut.entity.manager.RegisterApproval;
 import cn.edu.bjut.manageridentified.mapper.ManagerIdentifiedMapper;
 import cn.edu.bjut.manageridentified.service.ManagerIdentifyService;
 import cn.edu.bjut.result.Result;
@@ -29,5 +30,15 @@ public class ManagerIdentifyImpl implements ManagerIdentifyService {
     @Override
     public Enterprise enterpriseDetail(Enterprise enterprise) {
         return managerIdentifiedMapper.selectEnterpriseDetail(enterprise);
+    }
+
+    @Override
+    public List<Enterprise> selectPendingFirmOnNameAndCreditCode(Enterprise enterprise) {
+        return managerIdentifiedMapper.selectPendingFirmOnNameAndCreditCode(enterprise);
+    }
+
+    @Override
+    public List<RegisterApproval> selectApprovalFirmOnStatus(RegisterApproval registerApproval) {
+        return managerIdentifiedMapper.selectApprovalFirmOnStatus(registerApproval);
     }
 }

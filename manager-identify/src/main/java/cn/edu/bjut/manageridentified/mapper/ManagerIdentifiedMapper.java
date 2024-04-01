@@ -1,6 +1,7 @@
 package cn.edu.bjut.manageridentified.mapper;
 
 import cn.edu.bjut.entity.enterprise.Enterprise;
+import cn.edu.bjut.entity.manager.RegisterApproval;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.MapKey;
 import org.apache.ibatis.annotations.Mapper;
@@ -19,4 +20,8 @@ public interface ManagerIdentifiedMapper {
     List<Map<Object, Object>> selectApprovalFirm();
 
     public Enterprise selectEnterpriseDetail(Enterprise enterprise);
+
+    public List<Enterprise> selectPendingFirmOnNameAndCreditCode(Enterprise enterprise);
+
+    public List<RegisterApproval> selectApprovalFirmOnStatus(RegisterApproval registerApproval);
 }

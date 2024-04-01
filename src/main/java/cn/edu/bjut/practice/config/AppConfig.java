@@ -2,6 +2,8 @@ package cn.edu.bjut.practice.config;
 
 import cn.edu.bjut.jwt.JWTUtils;
 import org.mybatis.spring.annotation.MapperScan;
+import org.mybatis.spring.mapper.MapperFactoryBean;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -16,7 +18,7 @@ import cn.edu.bjut.oss.AliOSSUtils;
 @MapperScan("cn.edu.bjut.manageridentified.mapper")
 @MapperScan("cn.edu.bjut.studentregister.mapper")
 @MapperScan("cn.edu.bjut.practice.mapper")
-@ComponentScan(basePackages = { "cn.edu.bjut.hrregister","cn.edu.bjut.practice",
+@ComponentScan(basePackages = { "cn.edu.bjut.hrregister",
                                 "cn.edu.bjut.interceptor","cn.edu.bjut.result",
                                 "cn.edu.bjut.managerlogin","cn.edu.bjut.enterpriseregister",
                                  "cn.edu.bjut.manageridentified","cn.edu.bjut.oss","cn.edu.bjut.jwt",

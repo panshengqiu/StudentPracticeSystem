@@ -8,6 +8,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 
+import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -20,7 +21,10 @@ public class LoginCheckInterceptor implements HandlerInterceptor {
     @Override  // controller方法执行前,false表示拦截，true表示放行
     public boolean preHandle(HttpServletRequest req, HttpServletResponse resp, Object handler) throws Exception {
         System.out.println("preHandle...");
-
+        if(HttpMethod.OPTIONS.toString().equals(req.getMethod())){
+            log.info("OPTIONS请求，放行");
+            return true;
+        }
         // 1. 获取请求资源路径
         String url = req.getRequestURI();
 
@@ -31,7 +35,7 @@ public class LoginCheckInterceptor implements HandlerInterceptor {
             return true;
         }
         // 3. 获取请求头的令牌
-        String jwt = req.getHeader("token");
+        String jwt = req.getHeader("Authorization");
         log.info("令牌：{}", jwt);
         // 4. 判断令牌是否存在
         if(!StringUtils.hasLength(jwt)){

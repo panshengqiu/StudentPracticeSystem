@@ -15,4 +15,19 @@
         select *
         from enterprise where id = #{id};
     </select>
+    <select id="selectPendingFirmOnNameAndCreditCode" resultType="cn.edu.bjut.entity.enterprise.Enterprise">
+        select * from enterprise
+        <where>
+            <if test="name!=null">
+                name = #{name}
+            </if>
+            <if test="creditCode != null">
+                and credit_code = #{creditCode}
+            </if>
+        </where>
+    </select>
+    <select id="selectApprovalFirmOnStatus" resultType="cn.edu.bjut.entity.manager.RegisterApproval">
+        select *
+        from register_approval where status = #{status};
+    </select>
 </mapper>
