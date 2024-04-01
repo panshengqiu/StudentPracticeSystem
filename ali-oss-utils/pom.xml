@@ -10,6 +10,7 @@
     <groupId>cn.edu.bjut</groupId>
     <artifactId>parent-module</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <relativePath>../parent-module/pom.xml</relativePath>
   </parent>
   <dependencies>
 
@@ -56,6 +57,12 @@
       <groupId>org.springframework</groupId>
       <artifactId>spring-web</artifactId>
     </dependency>
+      <dependency>
+          <groupId>cn.edu.bjut</groupId>
+          <artifactId>result-module</artifactId>
+          <version>1.0-SNAPSHOT</version>
+          <scope>compile</scope>
+      </dependency>
 
   </dependencies>
 

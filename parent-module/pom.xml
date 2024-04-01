@@ -70,4 +70,31 @@
 
   </dependencies>
 
+  <build>
+    <plugins>
+      <!-- maven-clean-plugin -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-clean-plugin</artifactId>
+        <version>3.3.2</version>
+      </plugin>
+
+      <!-- maven-install-plugin -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-install-plugin</artifactId>
+        <version>3.1.1</version>
+      </plugin>
+
+      <!-- maven-deploy-plugin -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <version>3.1.1</version>
+      </plugin>
+
+      <!-- 其他插件... -->
+    </plugins>
+  </build>
+
 </project>

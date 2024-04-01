@@ -2,6 +2,14 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <excludeFromCompile>
+      <directory url="file://$PROJECT_DIR$/../jwt-utils/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/../entity/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/../student-register/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/../enterprise-register/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/../hr-register/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/../manager-identify/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/../manager-login/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/../parent-module/src/main/resources/archetype-resources" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/enterprise-register/src/main/resources/archetype-resources" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/entity/src/main/resources/archetype-resources" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/hr-register/src/main/resources/archetype-resources" includeSubdirectories="true" />
@@ -15,32 +23,21 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="student-register" />
-        <module name="practice" />
-        <module name="manager-identify" />
-        <module name="enterprise-register" />
-        <module name="hr-register" />
-        <module name="interceptor-module" />
-        <module name="ali-oss-utils" />
-        <module name="result-module" />
-        <module name="filter-module" />
-        <module name="entity" />
-        <module name="jwt-utils" />
-        <module name="manager-login" />
+        <module name="practice-springboot-starter" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="11">
-      <module name="springboot-web-practice" target="17" />
+    <bytecodeTargetLevel>
+      <module name="ali-oss-utils" target="17" />
+      <module name="enterprise-register" target="17" />
+      <module name="entity" target="17" />
+      <module name="hr-register" target="17" />
+      <module name="interceptor-module" target="17" />
+      <module name="jwt-utils" target="1.8" />
+      <module name="manager-identify" target="17" />
+      <module name="manager-login" target="17" />
+      <module name="parent-module" target="1.5" />
+      <module name="result-module" target="17" />
+      <module name="student-register" target="1.8" />
     </bytecodeTargetLevel>
-  </component>
-  <component name="JavacSettings">
-    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="ali-oss-utils" options="-parameters" />
-      <module name="enterprise-register" options="-parameters" />
-      <module name="hr-register" options="-parameters" />
-      <module name="manager-login" options="-parameters" />
-      <module name="practice" options="-parameters" />
-      <module name="springboot-web-practice" options="-parameters" />
-    </option>
   </component>
 </project>
