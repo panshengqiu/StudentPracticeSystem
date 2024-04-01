@@ -5,7 +5,7 @@ import cn.edu.bjut.entity.student.other.Student;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Insert;
 @Mapper
-public interface StudentMapper1 {
+public interface StudentMapperRegister {
 
     @Insert("insert into student(name,username,phone,email,sex,birthday,password)values(#{name},#{username},#{phone},#{email},#{sex},#{birthday},#{password})")
     int insertStudent(Student student);
