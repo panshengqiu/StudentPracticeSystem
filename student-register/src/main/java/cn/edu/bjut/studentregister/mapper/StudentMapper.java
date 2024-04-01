@@ -8,6 +8,6 @@ import org.apache.ibatis.annotations.Insert;
 public interface StudentMapper {
 
     @Insert("insert into student(name,username,phone,email,sex,birthday,password)values(#{name},#{username},#{phone},#{email},#{sex},#{birthday},#{password})")
-    void insertStudent(Student student);
+    int insertStudent(Student student);
 
 }
