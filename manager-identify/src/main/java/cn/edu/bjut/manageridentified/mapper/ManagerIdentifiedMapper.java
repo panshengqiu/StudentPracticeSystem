@@ -23,5 +23,10 @@ public interface ManagerIdentifiedMapper {
 
     public List<Enterprise> selectPendingFirmOnNameAndCreditCode(Enterprise enterprise);
 
-    public List<RegisterApproval> selectApprovalFirmOnStatus(RegisterApproval registerApproval);
+    @MapKey("id")
+    public List<Map<Object, Object>> selectApprovalFirmOnStatus(RegisterApproval registerApproval);
+
+    public Integer updateEnterpriseStatus(Enterprise enterprise);
+
+    public Integer insertApprovalRecord(RegisterApproval registerApproval);
 }

@@ -11,5 +11,8 @@ public interface ManagerIdentifyService {
     public List<Map<Object, Object>> selectApprovalFirm();
     public Enterprise enterpriseDetail(Enterprise enterprise);
     public List<Enterprise> selectPendingFirmOnNameAndCreditCode(Enterprise enterprise);
-    public List<RegisterApproval> selectApprovalFirmOnStatus(RegisterApproval registerApproval);
+    public List<Map<Object, Object>> selectApprovalFirmOnStatus(RegisterApproval registerApproval);
+    public Integer updateEnterpriseStatus(Enterprise enterprise);
+
+    public Boolean approvalRegisterFirm(RegisterApproval registerApproval);
 }

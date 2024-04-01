@@ -25,6 +25,7 @@ public class HRController {
             Map<String, Object> claims = new HashMap<>();
             claims.put("username",hr.getUsername());
             claims.put("password", hr.getPassword());
+            claims.put("id", hr.getId());
             String jwt = JWTUtils.setAndGetJWT(claims);
             return Result.success(jwt);
         }

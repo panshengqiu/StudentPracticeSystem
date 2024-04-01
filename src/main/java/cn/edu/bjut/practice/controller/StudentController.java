@@ -28,6 +28,7 @@ public class StudentController {
             Map<String, Object> claims = new HashMap<>();
             claims.put("username",stu.getUsername());
             claims.put("password", stu.getPassword());
+            claims.put("id", stu.getId());
             String jwt = JWTUtils.setAndGetJWT(claims);
             return Result.success(jwt);
         }

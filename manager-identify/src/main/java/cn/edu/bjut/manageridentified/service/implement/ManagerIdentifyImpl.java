@@ -5,12 +5,15 @@ import cn.edu.bjut.entity.manager.RegisterApproval;
 import cn.edu.bjut.manageridentified.mapper.ManagerIdentifiedMapper;
 import cn.edu.bjut.manageridentified.service.ManagerIdentifyService;
 import cn.edu.bjut.result.Result;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
-
+@Slf4j
 @Service
 public class ManagerIdentifyImpl implements ManagerIdentifyService {
 
@@ -38,7 +41,24 @@ public class ManagerIdentifyImpl implements ManagerIdentifyService {
     }
 
     @Override
-    public List<RegisterApproval> selectApprovalFirmOnStatus(RegisterApproval registerApproval) {
+    public List<Map<Object, Object>> selectApprovalFirmOnStatus(RegisterApproval registerApproval) {
         return managerIdentifiedMapper.selectApprovalFirmOnStatus(registerApproval);
+    }
+
+    @Override
+    public Integer updateEnterpriseStatus(Enterprise enterprise) {
+        return managerIdentifiedMapper.updateEnterpriseStatus(enterprise);
+    }
+
+    @Override
+    @Transactional
+    public Boolean approvalRegisterFirm(RegisterApproval registerApproval) {
+        Integer firmStatusNum = managerIdentifiedMapper.updateEnterpriseStatus(registerApproval.getEnterprise());
+        log.info("firmStatusNum:", firmStatusNum);
+        LocalDateTime localDateTime = LocalDateTime.now();
+        registerApproval.setApprovalTime(localDateTime);
+        Integer approvalRecordStatusNum = managerIdentifiedMapper.insertApprovalRecord(registerApproval);
+        log.info("approvalRecordStatusNum:", approvalRecordStatusNum);
+        return firmStatusNum > 0 && approvalRecordStatusNum > 0;
     }
 }

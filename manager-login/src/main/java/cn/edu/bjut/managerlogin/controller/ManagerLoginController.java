@@ -25,6 +25,7 @@ public class ManagerLoginController {
             Map<String, Object> claims = new HashMap<>();
             claims.put("username",manager1.getUsername());
             claims.put("password", manager1.getPassword());
+            claims.put("id", manager1.getId());
             String jwt = JWTUtils.setAndGetJWT(claims);
             return Result.success(jwt);
         }
