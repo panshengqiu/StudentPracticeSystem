@@ -1,10 +1,11 @@
 package cn.edu.bjut.studentregister.controller;
 
 import cn.edu.bjut.entity.student.other.Student;
-import cn.edu.bjut.jwt.JWTUtils;
 import cn.edu.bjut.result.Result;
-import cn.edu.bjut.studentregister.mapper.StudentMapperRegister;
+
 import cn.edu.bjut.studentregister.service.StudentRegisterService;
+
+
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,6 +19,7 @@ import java.util.Map;
 @RestController
 public class StudentRegisterController {
     @Autowired
+
     private StudentRegisterService studentRegisterService;
 
     @PostMapping("/StudentRegisterView")

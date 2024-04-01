@@ -1,6 +1,7 @@
 package cn.edu.bjut.entity.student.performance;
 
 
+import cn.edu.bjut.entity.student.other.Student;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,6 +11,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor  // 有参数构造方法
 public class Honor {
     private Integer id;
-    private Integer stuId;
+    private Student student;
     private String name;
 }

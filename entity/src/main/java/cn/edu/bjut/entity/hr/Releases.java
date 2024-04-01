@@ -1,5 +1,6 @@
 package cn.edu.bjut.entity.hr;
 
+import cn.edu.bjut.entity.post.Post;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,7 +12,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor  // 有参数构造方法
 public class Releases {
     private Integer id;
-    private Integer postId;
-    private Integer hrId;
+    private Post post;
+    private HumanResource humanResource;
     private LocalDateTime releaseTime;
 }

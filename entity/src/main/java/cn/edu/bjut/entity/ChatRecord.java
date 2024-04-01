@@ -11,8 +11,8 @@ import java.time.LocalDateTime;
 @AllArgsConstructor  // 有参数构造方法
 public class ChatRecord {
     private Integer id;
-    private Integer senderId;
-    private Integer receiverId;
+    private Object sender;
+    private Object receiver;
     private String content;
     private LocalDateTime sendTime;
     private LocalDateTime receiveTime;

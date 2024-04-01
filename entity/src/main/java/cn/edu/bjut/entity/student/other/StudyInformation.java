@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor  // 有参数构造方法
 public class StudyInformation {
     private Integer id;
-    private Integer stuId;
+    private Student student;
     private String major;
     private String school;
     private String grade;
