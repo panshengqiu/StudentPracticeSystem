@@ -22,11 +22,12 @@ public class StudentRegisterController {
 
     private StudentRegisterService studentRegisterService;
 
-    @PostMapping("/StudentRegisterView")
+    @PostMapping("/studentRegisterView")
     public Result resgister(@RequestBody Student student){
-        studentRegisterService.register(student);
-        return new Result("success", "Student registered successfully");
-
+        if(studentRegisterService.register(student)>0){
+            return Result.success("注册成功");
+        }
+        else return Result.error("注册失败");
     }
 
 }
