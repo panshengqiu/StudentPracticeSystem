@@ -11,17 +11,29 @@
 
 	<artifactId>practice-springboot-starter</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>practice-springboot-starter</name>
+    <packaging>pom</packaging>
+    <name>practice-springboot-starter</name>
 	<description>Demo project for Spring Boot</description>
+    <modules>
+        <module>websocket-chat</module>
+    </modules>
 
 	<properties>
 		<java.version>17</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.example</groupId>
 			<artifactId>hr-register</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>cn.edu.bjut</groupId>
+			<artifactId>websocket-chat</artifactId>
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
 

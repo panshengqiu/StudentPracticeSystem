@@ -16,8 +16,8 @@ public class StudentServiceImpl implements StudentService {
     public void delete(Integer id) {              // 而 @Transactional回滚RuntimeException类型的异常
     }
 
-    public Student login(String username, String password) {
-        return studentMapper.login(username, password);
+    public Student login(Student student) {
+        return studentMapper.login(student);
     }
 
 }

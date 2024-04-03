@@ -2,17 +2,25 @@ package cn.edu.bjut.enterpriseregister.controller;
 
 import cn.edu.bjut.enterpriseregister.service.EnterpriseRegisterService;
 import cn.edu.bjut.entity.enterprise.Enterprise;
+import cn.edu.bjut.oss.AliOSSUtils;
 import cn.edu.bjut.result.Result;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.IOException;
 
 @RestController
+@Slf4j
 public class EnterpriseRegisterController {
 
     @Autowired
     private EnterpriseRegisterService ers;
+    @Autowired
+    private AliOSSUtils aliOSSUtils;
 
     @PostMapping("/enterpriseRegister")
     public Result insert(@RequestBody Enterprise enterprise){

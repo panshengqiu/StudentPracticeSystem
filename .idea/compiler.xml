@@ -23,29 +23,33 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="practice-springboot-starter" />
         <module name="student-register" />
         <module name="manager-identify" />
         <module name="enterprise-register" />
         <module name="hr-register" />
         <module name="interceptor-module" />
         <module name="ali-oss-utils" />
+        <module name="websocket-chat" />
         <module name="result-module" />
         <module name="entity" />
         <module name="jwt-utils" />
         <module name="manager-login" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel target="17" />
   </component>
   <component name="JavacSettings">
+    <option name="PREFER_TARGET_JDK_COMPILER" value="false" />
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="ali-oss-utils" options="-parameters" />
       <module name="enterprise-register" options="-parameters" />
       <module name="hr-register" options="-parameters" />
       <module name="manager-identify" options="-parameters" />
       <module name="manager-login" options="-parameters" />
+      <module name="parent-module" options="-parameters" />
       <module name="practice-springboot-starter" options="-parameters" />
       <module name="student-register" options="-parameters" />
+      <module name="websocket-chat" options="-parameters" />
     </option>
   </component>
 </project>

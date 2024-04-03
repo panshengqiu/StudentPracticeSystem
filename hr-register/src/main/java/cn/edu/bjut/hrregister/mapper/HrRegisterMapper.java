@@ -13,7 +13,7 @@ import java.util.List;
 
 @Mapper
 public interface HrRegisterMapper {
-    public int register(int id, String username, String password);
+    public int register(HumanResource humanResource);
 
     public String firmIsRegister(String name, String creditCode);
 
