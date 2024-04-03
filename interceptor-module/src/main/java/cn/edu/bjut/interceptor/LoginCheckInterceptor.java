@@ -34,6 +34,12 @@ public class LoginCheckInterceptor implements HandlerInterceptor {
             log.info("登录路径，放行");
             return true;
         }
+        if(url.contains("Register")){
+            // 是登录路径，放行
+            log.info("注册路径，放行");
+            return true;
+        }
+
         // 3. 获取请求头的令牌
         String jwt = req.getHeader("Authorization");
         log.info("令牌：{}", jwt);
