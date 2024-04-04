@@ -1,5 +1,6 @@
 package cn.edu.bjut.entity.hr;
 
+import cn.edu.bjut.entity.enterprise.Enterprise;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,8 +10,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor  // 有参数构造方法
 public class HumanResource {
     private Integer id;
-    private Integer firmId;
+    private Enterprise enterprise;
     private String username;
     private String password;
-    private String head_url;
+    private String email;
+    private String phone;
+    private String headUrl;
 }

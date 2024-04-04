@@ -1,5 +1,6 @@
 package cn.edu.bjut.entity.hr;
 
+import cn.edu.bjut.entity.student.other.Submit;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,7 +12,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor  // 有参数构造方法
 public class ResumeApproval {
     private Integer id;
-    private Integer submitId;
+    private Submit submit;
     private LocalDateTime approvalTime;
     private String status;
 }

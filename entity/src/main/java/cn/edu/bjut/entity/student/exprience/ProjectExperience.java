@@ -1,5 +1,6 @@
 package cn.edu.bjut.entity.student.exprience;
 
+import cn.edu.bjut.entity.student.other.Student;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,7 +13,7 @@ import java.time.LocalDate;
 
 public class ProjectExperience {
     private Integer id;
-    private Integer stuId;
+    private Student student;
     private String name;
     private String role;
     private LocalDate startDate;
