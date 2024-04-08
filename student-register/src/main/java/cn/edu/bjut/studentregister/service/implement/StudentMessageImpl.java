@@ -1,6 +1,6 @@
 package cn.edu.bjut.studentregister.service.implement;
 
-import cn.edu.bjut.entity.student.other.Student;
+import cn.edu.bjut.studentregister.mapper.StudentVerifyCode;
 import cn.edu.bjut.studentregister.service.StudentMessageService;
 import com.aliyuncs.DefaultAcsClient;
 import com.aliyuncs.dysmsapi.model.v20170525.SendSmsRequest;
@@ -8,9 +8,9 @@ import com.aliyuncs.dysmsapi.model.v20170525.SendSmsResponse;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.profile.IClientProfile;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.rmi.ServerException;
 import java.util.Random;
 @Component
 public class StudentMessageImpl implements StudentMessageService {
@@ -34,10 +34,11 @@ public class StudentMessageImpl implements StudentMessageService {
         }
 
     }
+    @Autowired
+    private StudentVerifyCode studentVerifyCode;
 
-    @Override
-    public boolean verifyCode(String phone, String code) {
-        return false;
+    public void insertCode(String phone, String code){
+        studentVerifyCode.insertCode(phone, code);
     }
 
     private String generateCode() {
