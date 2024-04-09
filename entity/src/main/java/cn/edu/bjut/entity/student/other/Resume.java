@@ -10,6 +10,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor  // 有参数构造方法
 public class Resume {
     private Integer id;
-    private Integer stuId;
+    private Student student;
     private String resumeUrl;
 }

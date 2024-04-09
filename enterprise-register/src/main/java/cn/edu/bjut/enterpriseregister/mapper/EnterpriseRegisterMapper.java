@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface EnterpriseRegisterMapper {
-    @Insert("insert into enterprise(name, address, credit_code, description) values (#{name},#{address},#{creditCode},#{description})")
+    @Insert("insert into enterprise(name, address, credit_code, description,status,logo_url) " +
+            "values (#{name},#{address},#{creditCode},#{description},'待审核',#{logoUrl})")
     public int insert(Enterprise enterprise);
 }

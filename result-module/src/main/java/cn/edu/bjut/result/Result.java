@@ -13,6 +13,10 @@ public class Result {
     private String msg;  //响应信息 描述字符串
     private Object data; //返回的数据
 
+    public Result(String success, String studentRegisteredSuccessfully) {
+    }
+
+
     //增删改 成功响应
     public static Result success(){
         return new Result(1,"success",null);
@@ -22,7 +26,11 @@ public class Result {
         return new Result(1,"success",data);
     }
     //失败响应
-    public static Result error(String msg){
-        return new Result(0,"error",msg);
+    public static Result error(String data){
+        return new Result(0,"error",data);
+    }
+
+    public static Result result(boolean available){
+        return  new Result(1, "success", available);
     }
 }

@@ -10,6 +10,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor  // 有参数构造方法
 public class PostSmallType {
     private Integer id;
-    private Integer bigTypeId;
+    private PostBigType postBigType;
     private String name;
 }

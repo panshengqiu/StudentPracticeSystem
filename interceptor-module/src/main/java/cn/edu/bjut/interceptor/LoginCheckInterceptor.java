@@ -3,10 +3,12 @@ package cn.edu.bjut.interceptor;
 import cn.edu.bjut.jwt.JWTUtils;
 import cn.edu.bjut.result.Result;
 import com.alibaba.fastjson.JSONObject;
+import io.jsonwebtoken.Claims;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 
+import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -19,7 +21,10 @@ public class LoginCheckInterceptor implements HandlerInterceptor {
     @Override  // controller方法执行前,false表示拦截，true表示放行
     public boolean preHandle(HttpServletRequest req, HttpServletResponse resp, Object handler) throws Exception {
         System.out.println("preHandle...");
-
+        if(HttpMethod.OPTIONS.toString().equals(req.getMethod())){
+            log.info("OPTIONS请求，放行");
+            return true;
+        }
         // 1. 获取请求资源路径
         String url = req.getRequestURI();
 
@@ -29,12 +34,20 @@ public class LoginCheckInterceptor implements HandlerInterceptor {
             log.info("登录路径，放行");
             return true;
         }
+        if(url.contains("Register")){
+            // 是登录路径，放行
+            log.info("注册路径，放行");
+            return true;
+        }
+
         // 3. 获取请求头的令牌
-        String jwt = req.getHeader("token");
+        String jwt = req.getHeader("Authorization");
+        log.info("令牌：{}", jwt);
         // 4. 判断令牌是否存在
         if(!StringUtils.hasLength(jwt)){
-            log.info("未登录");
+            log.info("令牌不存在，未登录");
             Result result = Result.error("NOT_LOGIN");
+            resp.setStatus(HttpServletResponse.SC_UNAUTHORIZED); // 401 Unauthorized
             String notLogin = JSONObject.toJSONString(result);
             resp.getWriter().write(notLogin);
             return false;
@@ -42,12 +55,17 @@ public class LoginCheckInterceptor implements HandlerInterceptor {
 
         // 5. 校验令牌
         try {
-            JWTUtils.parseJWT();
+            Claims claims = JWTUtils.parseJWT(jwt);
+            log.info("校验解析后的令牌：{}", claims);
         } catch (Exception e) { // 令牌校验失败
-            e.printStackTrace();
-            log.info("未登录");
+            log.info("校验令牌失败，未登录");
+
+            // 构建失败信息
             Result result = Result.error("NOT_LOGIN");
             String notLogin = JSONObject.toJSONString(result);
+
+            // 设置响应状态码和内容
+            resp.setStatus(HttpServletResponse.SC_UNAUTHORIZED); // 401 Unauthorized
             resp.getWriter().write(notLogin);
             return false;
         }

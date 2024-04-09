@@ -6,4 +6,52 @@
   <version>1.0-SNAPSHOT</version>
   <name>Archetype - student-register</name>
   <url>http://maven.apache.org</url>
+
+    <parent>
+        <groupId>cn.edu.bjut</groupId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../parent-module/pom.xml</relativePath>
+        <artifactId>parent-module</artifactId>
+    </parent>
+    <dependencies>
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>jwt-utils</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.edu.bjut</groupId>
+            <artifactId>result-module</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>entity</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.25</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.17.0</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.17.0</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+            <version>2.17.0</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
 </project>

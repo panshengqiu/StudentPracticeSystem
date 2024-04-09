@@ -1,5 +1,6 @@
 package cn.edu.bjut.entity.post;
 
+import cn.edu.bjut.entity.hr.HumanResource;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,8 +12,8 @@ import java.time.LocalDate;
 @AllArgsConstructor  // 有参数构造方法
 public class Post {
     private Integer id;
-    private Integer smallPostId;
-    private Integer hrId;
+    private PostSmallType postSmallType;
+    private HumanResource humanResource;
     private String name;
     private String description;
     private String  demand;
