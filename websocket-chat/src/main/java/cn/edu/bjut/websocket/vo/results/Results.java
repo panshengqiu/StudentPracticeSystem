@@ -1,7 +1,5 @@
 package cn.edu.bjut.websocket.vo.results;
 
-import cn.edu.bjut.websocket.enums.ResultsEnum;
-import cn.edu.bjut.websocket.entity.Result;
 import com.alibaba.fastjson.JSONObject;
 
 public class Results<T> {

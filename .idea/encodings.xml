@@ -5,6 +5,7 @@
     <file url="file://$PROJECT_DIR$/enterprise-register/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/entity/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/entity/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hr-post-management/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hr-register/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/interceptor-module/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/interceptor-module/src/main/resources" charset="UTF-8" />
@@ -20,5 +21,6 @@
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/student-register/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/websocket-chat/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/websocket-chat/src/main/resources" charset="UTF-8" />
   </component>
 </project>

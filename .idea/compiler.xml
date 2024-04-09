@@ -16,6 +16,7 @@
       <directory url="file://$PROJECT_DIR$/jwt-utils/src/main/resources/archetype-resources" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/manager-identify/src/main/resources/archetype-resources" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/student-register/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/hr-post-management/src/main/resources/archetype-resources" includeSubdirectories="true" />
     </excludeFromCompile>
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
@@ -23,17 +24,19 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="student-register" />
         <module name="manager-identify" />
-        <module name="enterprise-register" />
         <module name="hr-register" />
+        <module name="jwt-utils" />
+        <module name="manager-login" />
+        <module name="practice-springboot-starter" />
+        <module name="student-register" />
+        <module name="enterprise-register" />
+        <module name="hr-post-management" />
         <module name="interceptor-module" />
         <module name="ali-oss-utils" />
         <module name="websocket-chat" />
         <module name="result-module" />
         <module name="entity" />
-        <module name="jwt-utils" />
-        <module name="manager-login" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="17" />
@@ -43,13 +46,14 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="ali-oss-utils" options="-parameters" />
       <module name="enterprise-register" options="-parameters" />
+      <module name="hr-post-management" options="-parameters" />
       <module name="hr-register" options="-parameters" />
       <module name="manager-identify" options="-parameters" />
       <module name="manager-login" options="-parameters" />
       <module name="parent-module" options="-parameters" />
       <module name="practice-springboot-starter" options="-parameters" />
       <module name="student-register" options="-parameters" />
-      <module name="websocket-chat" options="-parameters" />
+      <module name="websocket-chat" options="" />
     </option>
   </component>
 </project>
