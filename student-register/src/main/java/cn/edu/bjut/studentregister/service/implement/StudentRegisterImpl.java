@@ -12,7 +12,7 @@ public class StudentRegisterImpl implements StudentRegisterService {
     @Autowired
     private StudentMapperRegister studentMapper1;
 
-    public int register(Student student) {
-       return studentMapper1.insertStudent(student);
+    public int register(String name,String username,String phone,String sex,String password) {
+       return studentMapper1.insertStudent(name,username,phone,sex,password);
     }
 }
