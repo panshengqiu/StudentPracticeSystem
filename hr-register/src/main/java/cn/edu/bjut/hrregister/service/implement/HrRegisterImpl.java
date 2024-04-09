@@ -16,8 +16,8 @@ public class HrRegisterImpl implements HrRegisterService {
     @Autowired
     HrRegisterMapper hrRegisterMapper;
     @Override
-    public int register(int id, String username, String password) {
-        return hrRegisterMapper.register(id, username,password);
+    public int register(HumanResource humanResource) {
+        return hrRegisterMapper.register(humanResource);
     }
 
     @Override

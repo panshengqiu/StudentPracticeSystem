@@ -1,6 +1,8 @@
 package cn.edu.bjut.hrregister.controller;
 
 
+import cn.edu.bjut.entity.enterprise.Enterprise;
+import cn.edu.bjut.entity.hr.HumanResource;
 import cn.edu.bjut.hrregister.service.HrRegisterService;
 import cn.edu.bjut.result.Result;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,12 +18,12 @@ public class HrRegisterController {
     private HrRegisterService hrRegisterService;
 
     @PostMapping("/hrRegister")
-    public Result register(@RequestBody cn.edu.bjut.hrregister.controller.RequestBody requestBody){
-        System.out.println("企业名称：" + requestBody.getName());
-        System.out.println("企业社会信用代码：" + requestBody.getCreditCode());
-        System.out.println("用户名：" + requestBody.getUsername());
-        System.out.println("密码：" + requestBody.getPassword());
-        String registerStatus = hrRegisterService.isFirmRegister(requestBody.getName(), requestBody.getCreditCode());
+    public Result register(@RequestBody HumanResource humanResource){
+        System.out.println("企业名称：" + humanResource.getEnterprise().getName());
+        System.out.println("企业社会信用代码：" + humanResource.getEnterprise().getCreditCode());
+        System.out.println("用户名：" + humanResource.getUsername());
+        System.out.println("密码：" + humanResource.getPassword());
+        String registerStatus = hrRegisterService.isFirmRegister(humanResource.getEnterprise().getName(), humanResource.getEnterprise().getCreditCode());
         System.out.println("registerStatus:"+ registerStatus);
         if(registerStatus == null){
             System.out.println("企业未注册");
@@ -30,7 +32,7 @@ public class HrRegisterController {
         if(registerStatus.equals("待审核")){
             return Result.error("您的企业正在等待审核中，请等审核通过后再验证");
         }
-        String approvalStatus = hrRegisterService.isFirmApproval(requestBody.getName(), requestBody.getCreditCode());
+        String approvalStatus = hrRegisterService.isFirmApproval(humanResource.getEnterprise().getName(), humanResource.getEnterprise().getCreditCode());
         System.out.println("approvalStatus:"+ approvalStatus);
         if(approvalStatus != null){
             if(approvalStatus.equals("未通过")) {
@@ -39,8 +41,9 @@ public class HrRegisterController {
         }else {
             return Result.error("您的企业正在等待审核中，请等审核通过后再验证");
         }
-        int enterpriseId = hrRegisterService.getEnterpriseId(requestBody.getName(), requestBody.getCreditCode());
-        int insertNum = hrRegisterService.register(enterpriseId,requestBody.getUsername(),requestBody.getPassword());
+        int enterpriseId = hrRegisterService.getEnterpriseId(humanResource.getEnterprise().getName(), humanResource.getEnterprise().getCreditCode());
+        humanResource.getEnterprise().setId(enterpriseId);
+        int insertNum = hrRegisterService.register(humanResource);
         if(insertNum > 0 ){
             return Result.success("恭喜您，注册成功，请前往登入界面！");
         }

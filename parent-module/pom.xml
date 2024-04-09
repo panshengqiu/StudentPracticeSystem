@@ -4,7 +4,7 @@
   <groupId>cn.edu.bjut</groupId>
   <artifactId>parent-module</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <name>Archetype - parent-module</name>
+  <name>parent-module</name>
   <url>http://maven.apache.org</url>
   <packaging>pom</packaging>
 
@@ -14,6 +14,12 @@
     <version>3.2.4</version>
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
+
+  <properties>
+    <java.version>17</java.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+  </properties>
 
   <dependencies>
     <dependency>
@@ -94,7 +100,16 @@
       </plugin>
 
       <!-- 其他插件... -->
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>17</source>
+          <target>17</target>
+        </configuration>
+      </plugin>
     </plugins>
+
+
   </build>
 
 </project>

@@ -5,8 +5,8 @@
 
 <mapper namespace="cn.edu.bjut.hrregister.mapper.HrRegisterMapper">
     <insert id="register">
-        insert into human_resource(firm_id,username, password)
-                        values(#{id},#{username},#{password});
+        insert into human_resource(firm_id,username, password,email,phone)
+                        values(#{enterprise.id},#{username},#{password},#{email},#{phone});
     </insert>
     <select id="firmIsRegister" resultType="String">
         select status from enterprise
