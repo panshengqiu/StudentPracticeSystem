@@ -34,9 +34,14 @@
         <module name="entity" />
         <module name="jwt-utils" />
         <module name="manager-login" />
+        <module name="student-resume-produce" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="17" />
+    <bytecodeTargetLevel target="17">
+      <module name="filter-module" target="17" />
+      <module name="practice" target="17" />
+      <module name="springboot-web-practice" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="PREFER_TARGET_JDK_COMPILER" value="false" />
@@ -49,6 +54,7 @@
       <module name="parent-module" options="-parameters" />
       <module name="practice-springboot-starter" options="-parameters" />
       <module name="student-register" options="-parameters" />
+      <module name="student-resume-produce" options="-parameters" />
       <module name="websocket-chat" options="-parameters" />
     </option>
   </component>

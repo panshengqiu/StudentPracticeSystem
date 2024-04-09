@@ -6,7 +6,10 @@
   <version>1.0-SNAPSHOT</version>
   <name>parent-module</name>
   <url>http://maven.apache.org</url>
-  <packaging>pom</packaging>
+    <modules>
+        <module>../student-resume-produce</module>
+    </modules>
+    <packaging>pom</packaging>
 
   <parent>
     <groupId>org.springframework.boot</groupId>
