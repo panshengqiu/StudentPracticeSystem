@@ -31,6 +31,7 @@
         <module name="manager-login" />
         <module name="practice-springboot-starter" />
         <module name="student-register" />
+        <module name="post-record" />
         <module name="enterprise-register" />
         <module name="hr-post-management" />
         <module name="interceptor-module" />
@@ -53,6 +54,7 @@
       <module name="manager-identify" options="-parameters" />
       <module name="manager-login" options="-parameters" />
       <module name="parent-module" options="-parameters" />
+      <module name="post-record" options="-parameters" />
       <module name="practice-springboot-starter" options="-parameters" />
       <module name="student-register" options="-parameters" />
       <module name="student-resume-produce" options="-parameters" />

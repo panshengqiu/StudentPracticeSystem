@@ -19,4 +19,5 @@ public class ProjectExperience {
     private LocalDate startDate;
     private LocalDate overDate;
     private String performance;
+    private Integer projectIndex;
 }

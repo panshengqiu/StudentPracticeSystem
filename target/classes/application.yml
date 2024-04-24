@@ -5,8 +5,8 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://101.200.231.159:3306/practice
-    username: liuxinxin
-    password: '@666Liuxinxin'
+    username: hehanglin
+    password: '@666Hehanglin'
 
   servlet:
     multipart:

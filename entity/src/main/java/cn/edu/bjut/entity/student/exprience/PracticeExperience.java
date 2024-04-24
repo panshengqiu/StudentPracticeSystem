@@ -13,10 +13,11 @@ import java.time.LocalDate;
 public class PracticeExperience {
     private Integer id;
     private Student student;
-    private String department;
-    private String post;
+    private String role;
+    private String name;
     private LocalDate startDate;
     private LocalDate overDate;
     private String performance;
+    private String practiceIndex;
 
 }
