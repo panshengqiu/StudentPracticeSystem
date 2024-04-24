@@ -8,6 +8,7 @@
   <url>http://maven.apache.org</url>
     <modules>
         <module>../student-search-post</module>
+        <module>../aliyun-ai-api</module>
     </modules>
 
     <packaging>pom</packaging>

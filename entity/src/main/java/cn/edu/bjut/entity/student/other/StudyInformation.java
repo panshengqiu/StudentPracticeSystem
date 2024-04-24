@@ -12,5 +12,9 @@ public class StudyInformation {
     private Student student;
     private String major;
     private String school;
-    private String grade;
+    private String rank;
+    private Integer score;
+    private String education;
+    private String lessonDescription;
+    private Integer educationIndex;
 }

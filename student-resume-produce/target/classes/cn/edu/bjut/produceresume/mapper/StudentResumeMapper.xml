@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.edu.bjut.produceresume.mapper.StudentResumeMapper">
+
+
+    <insert id="insertCertification" >
+        insert into certificate(stu_id, start_time,name,certification_index)
+        values(#{student.id},#{startTime} , #{name} , #{certificationIndex});
+    </insert>
+    <insert id="insertProject">
+        insert into project_experience(stu_id, start_date,over_date,name,role,performance,project_index)
+        values(#{student.id},#{startDate} ,#{overDate}, #{name} ,#{role} ,#{performance},#{projectIndex});
+    </insert>
+    <insert id="insertOrganization">
+        insert into organization_experience(stu_id, start_date,over_date,name,role,statement,organization_index)
+        values(#{student.id},#{startDate} ,#{overDate}, #{name} ,#{role} ,#{statement},#{organizationIndex});
+    </insert>
+    <insert id="insertPractice">
+        insert into practice_experience(stu_id, start_date,over_date,name,role,performance,practice_index)
+        values(#{student.id},#{startDate} ,#{overDate}, #{name} ,#{role} ,#{performance},#{practiceIndex});
+    </insert>
+    <insert id="insertEducation">
+        insert into education_information(stu_id, start_date,over_date,school,score,`rank`,major,education,lesson_description,education_index)
+        values(#{student.id},#{startDate} ,#{overDate}, #{school} ,#{score} ,#{rank},#{major},#{education},#{lessonDescription},#{educationIndex});
+    </insert>
+    <update id="updateCertification">
+        UPDATE certificate
+        SET start_time = #{startTime}, name = #{name}
+        WHERE stu_id = #{student.id} AND certification_index = #{certificationIndex}
+    </update>
+    <update id="updateCertificateAfterDelete">
+        UPDATE certificate
+        SET certification_index=certification_index-1
+        WHERE stu_id = #{student.id} AND certification_index >#{certificationIndex}
+    </update>
+    <update id="updateProject">
+        UPDATE project_experience
+        SET name=#{name} ,role=#{role},start_date=#{startDate},over_date=#{overDate},performance=#{performance}
+        WHERE stu_id = #{student.id} AND project_index =#{projectIndex}
+    </update>
+    <update id="updateProjectAfterDelete">
+        UPDATE project_experience
+        SET project_index=project_index-1
+        WHERE stu_id = #{student.id} AND project_index >#{projectIndex}
+    </update>
+    <update id="updateOrganization">
+        UPDATE organization_experience
+        SET name=#{name} ,role=#{role},start_date=#{startDate},over_date=#{overDate},statement=#{statement}
+        WHERE stu_id = #{student.id} AND organization_index =#{organizationIndex}
+    </update>
+    <update id="updateOrganizationAfterDelete">
+        UPDATE organization_experience
+        SET organization_index=organization_index-1
+        WHERE stu_id = #{student.id} AND organization_index >#{organizationIndex}
+    </update>
+    <update id="updatePractice">
+        UPDATE practice_experience
+        SET name=#{name} ,role=#{role},start_date=#{startDate},over_date=#{overDate},performance=#{performance}
+        WHERE stu_id = #{student.id} AND practice_index =#{practiceIndex}
+    </update>
+    <update id="updatePracticeAfterDelete">
+        UPDATE practice_experience
+        SET practice_index=practice_index-1
+        WHERE stu_id = #{student.id} AND practice_index >#{practiceIndex}
+    </update>
+    <update id="updateEducation">
+        UPDATE education_information
+        SET major=#{major},school=#{school},score=#{score},`rank`=#{rank},education=#{education},lesson_description=#{lessonDescription},start_date=#{startDate},over_date=#{overDate}
+        WHERE stu_id = #{student.id} AND education_index =#{educationIndex}
+    </update>
+    <update id="updateEducationAfterDelete">
+        UPDATE education_information
+        SET education_index=education_index-1
+        WHERE stu_id = #{student.id} AND education_index >#{educationIndex}
+    </update>
+    <delete id="deleteCertifications">
+        DELETE FROM certificate
+        WHERE stu_id = #{student.id}
+          AND certification_index = #{certificationIndex}
+    </delete>
+    <delete id="deleteProject">
+        DELETE FROM project_experience
+        WHERE stu_id = #{student.id}
+          AND Project_index = #{projectIndex}
+    </delete>
+    <delete id="deleteOrganization">
+        DELETE FROM organization_experience
+        WHERE stu_id = #{student.id}
+          AND Organization_index = #{organizationIndex}
+    </delete>
+    <delete id="deletePractice">
+        DELETE FROM practice_experience
+        WHERE stu_id = #{student.id}
+          AND practice_index = #{practiceIndex}
+    </delete>
+    <delete id="deleteEducation">
+        DELETE FROM education_information
+        WHERE stu_id = #{student.id}
+          AND education_index = #{educationIndex}
+    </delete>
+    <select id="getAllCertificates" resultType="cn.edu.bjut.entity.student.performance.Certification">
+        SELECT * FROM certificate WHERE stu_id = #{student.id};
+
+    </select>
+    <select id="countCertificateByIndex" resultType="java.lang.Integer">
+        SELECT * FROM certificate WHERE certification_index = #{certificationIndex} AND stu_id = #{student.id};
+    </select>
+    <select id="countProjectByIndex" resultType="java.lang.Integer">
+        SELECT * FROM project_experience WHERE project_index = #{projectIndex} AND stu_id = #{student.id};
+    </select>
+    <select id="getAllProject" resultType="cn.edu.bjut.entity.student.exprience.ProjectExperience">
+        SELECT * FROM project_experience WHERE stu_id = #{student.id};
+    </select>
+    <select id="countOrganizationByIndex" resultType="java.lang.Integer">
+        SELECT * FROM organization_experience WHERE organization_index = #{organizationIndex} AND stu_id = #{student.id};
+    </select>
+    <select id="getAllOrganization" resultType="cn.edu.bjut.entity.student.exprience.OrganizationExperience">
+        SELECT * FROM organization_experience WHERE stu_id = #{student.id};
+    </select>
+    <select id="countPracticeByIndex" resultType="java.lang.Integer">
+        SELECT * FROM practice_experience WHERE practice_index = #{practiceIndex} AND stu_id = #{student.id};
+    </select>
+    <select id="getAllPractice" resultType="cn.edu.bjut.entity.student.exprience.PracticeExperience">
+        SELECT * FROM practice_experience WHERE stu_id = #{student.id};
+    </select>
+    <select id="countEducationByIndex" resultType="java.lang.Integer">
+        SELECT * FROM education_information WHERE education_index = #{educationIndex} AND stu_id = #{student.id};
+    </select>
+    <select id="getAllEducation" resultType="cn.edu.bjut.entity.student.exprience.EducationInfo">
+        SELECT * FROM education_information WHERE stu_id = #{student.id};
+    </select>
+</mapper>

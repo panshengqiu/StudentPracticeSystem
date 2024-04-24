@@ -1,0 +1,4 @@
+cn\edu\bjut\hrpostmanagement\mapper\PostManagementMapper.class
+cn\edu\bjut\hrpostmanagement\service\impl\PostManagementServiceImpl.class
+cn\edu\bjut\hrpostmanagement\service\PostManagementService.class
+cn\edu\bjut\hrpostmanagement\controller\PostManagementController.class

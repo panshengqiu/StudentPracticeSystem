@@ -1,0 +1,5 @@
+cn\edu\bjut\managerlogin\service\ManagerLoginService.class
+cn\edu\bjut\managerlogin\service\implement\ManagerLoginImpl.class
+cn\edu\bjut\managerlogin\controller\ManagerLoginController.class
+cn\edu\bjut\managerlogin\mapper\ManagerLoginMapper.class
+cn\edu\bjut\managerlogin\config\AddBeanConfig.class

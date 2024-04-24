@@ -28,5 +28,6 @@ public interface ManagerIdentifiedMapper {
 
     public Integer updateEnterpriseStatus(Enterprise enterprise);
 
+
     public Integer insertApprovalRecord(RegisterApproval registerApproval);
 }

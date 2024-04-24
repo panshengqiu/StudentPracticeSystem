@@ -18,4 +18,5 @@ public class OrganizationExperience {
     private LocalDate startDate;
     private LocalDate overDate;
     private String statement;
+    private Integer organizationIndex;
 }

@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class JWTUtils {
     private static String signKey = "practice";
-    private static long expire = 600 * 1000;
+    private static long expire = 60000 * 1000;
     public static String setAndGetJWT(Map<String, Object> claims){ // 生成JWT
         String jwt = Jwts.builder()
                 .setClaims(claims)

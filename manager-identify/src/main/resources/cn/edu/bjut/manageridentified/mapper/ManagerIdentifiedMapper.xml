@@ -8,7 +8,7 @@
         insert into register_approval(manager_id, approval_time,status, enterprise_id)
         values(#{manager.id}, #{approvalTime}, #{status},#{enterprise.id});
     </insert>
-    <update id="updateEnterpriseStatus">
+    <update id="updateEnterpriseStatus" >
         update enterprise set status = '已审核' where id=#{id};
     </update>
     <select id="selectPendingFirm" resultType="cn.edu.bjut.entity.enterprise.Enterprise">
