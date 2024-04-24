@@ -1,5 +1,4 @@
 package cn.edu.bjut.entity.post;
-
 import cn.edu.bjut.entity.hr.HumanResource;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,4 +24,5 @@ public class Post {
     private LocalDate deliveryDeadline;
     private String workCity;
     private String status;
+    private String enterpriseName;
 }

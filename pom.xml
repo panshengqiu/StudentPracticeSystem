@@ -107,6 +107,11 @@
             <artifactId>lombok</artifactId>
             <version>1.18.30</version>
         </dependency>
+		<dependency>
+			<groupId>cn.edu.bjut</groupId>
+			<artifactId>student-search-post</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
 
     </dependencies>
 </project>

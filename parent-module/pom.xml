@@ -6,6 +6,10 @@
   <version>1.0-SNAPSHOT</version>
   <name>parent-module</name>
   <url>http://maven.apache.org</url>
+    <modules>
+        <module>../student-search-post</module>
+    </modules>
+
     <packaging>pom</packaging>
   <parent>
     <groupId>org.springframework.boot</groupId>

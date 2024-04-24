@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="MavenProjectsManager">
@@ -29,6 +30,8 @@
         <option value="$PROJECT_DIR$/student-register/pom.xml" />
         <option value="$PROJECT_DIR$/websocket-chat/pom.xml" />
         <option value="$PROJECT_DIR$/hr-post-management/pom.xml" />
+        <option value="$PROJECT_DIR$/student-resume-produce/pom.xml" />
+        <option value="$PROJECT_DIR$/student-search-post/pom.xml" />
       </list>
     </option>
   </component>

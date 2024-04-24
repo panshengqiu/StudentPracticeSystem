@@ -24,7 +24,7 @@ public class StudentController {
     @PostMapping("/studentLogin")
     public Result login(@RequestBody Student student){
         System.out.println("username: " + student.getUsername() + " password: " + student.getPassword());
-        Student stu = studentService.login(student);
+        Student stu = studentService.login(student.getUsername(), student.getPassword());
         if(stu != null){
             Map<String, Object> claims = new HashMap<>();
             claims.put("username",stu.getUsername());

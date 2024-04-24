@@ -39,6 +39,54 @@ public class LoginCheckInterceptor implements HandlerInterceptor {
             log.info("注册路径，放行");
             return true;
         }
+        if(url.contains("sendCode")){
+            // 是登录路径，放行
+            log.info("短信路径，放行");
+            return true;
+        }
+        if(url.contains("PostType")){
+            log.info("测试路径，放行");
+            return true;
+        }
+        if(url.contains("posts")){
+            log.info("测试路径，放行");
+            return true;
+        }
+        if(url.contains("sendSmall")){
+            log.info("测试路径，放行");
+            return true;
+        }
+        if(url.contains("recommandNew")){
+            log.info("测试路径，放行");
+            return true;
+        }
+        if(url.contains("sendInput")){
+            log.info("测试路径，放行");
+            return true;
+        }
+        if(url.contains("sendChildInput")){
+            log.info("测试路径，放行");
+            return true;
+        }
+        if(url.contains("sendChildTypeInput")){
+            log.info("测试路径，放行");
+            return true;
+        }
+        if(url.contains("sendFilter")){
+            log.info("测试路径，放行");
+            return true;
+        }
+        if(url.contains("sendFilterTime")){
+            log.info("测试路径，放行");
+            return true;
+        }
+        if(url.contains("sendMainFilter")){
+            log.info("测试路径，放行");
+            return true;
+        }
+
+
+
 
         // 3. 获取请求头的令牌
         String jwt = req.getHeader("Authorization");
