@@ -39,4 +39,4 @@
         select register_approval.id, manager_id, enterprise_id, approval_time, status
         from register_approval where status = #{status};
     </select>
-</mapper
+</mapper>

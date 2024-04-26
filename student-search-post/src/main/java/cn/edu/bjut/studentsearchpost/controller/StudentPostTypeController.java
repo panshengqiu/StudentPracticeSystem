@@ -1,9 +1,6 @@
 package cn.edu.bjut.studentsearchpost.controller;
 
-import cn.edu.bjut.entity.post.Post;
-import cn.edu.bjut.entity.post.PostBigType;
-import cn.edu.bjut.entity.post.PostSmallType;
-import cn.edu.bjut.entity.post.PostSmallTypeWithBigTypeName;
+import cn.edu.bjut.entity.post.*;
 import cn.edu.bjut.studentsearchpost.mapper.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,8 +58,8 @@ public class StudentPostTypeController {
     @Autowired
     private RecommandNewPost recommandNewPost;
     @GetMapping("/recommandNew")
-    public List<Post> getRecommandPostsNew() {
-        List<Post> posts=recommandNewPost.getRecommandPostsNew();
+    public List<PostAndEnterprise> getRecommandPostsNew() {
+        List<PostAndEnterprise> posts=recommandNewPost.getRecommandPostsNew();
         return posts;
     }
 

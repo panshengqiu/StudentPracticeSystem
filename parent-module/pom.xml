@@ -8,6 +8,7 @@
   <url>http://maven.apache.org</url>
     <modules>
         <module>../student-search-post</module>
+        <module>../student-post-view</module>
     </modules>
 
     <packaging>pom</packaging>

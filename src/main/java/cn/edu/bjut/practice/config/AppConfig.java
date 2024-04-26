@@ -17,12 +17,13 @@ import cn.edu.bjut.oss.AliOSSUtils;
 @MapperScan("cn.edu.bjut.practice.mapper")
 @MapperScan("cn.edu.bjut.hrpostmanagement.mapper")
 @MapperScan("cn.edu.bjut.studentsearchpost.mapper")
+@MapperScan("cn.edu.bjut.studentpostview.mapper")
 @ComponentScan(basePackages = {"cn.edu.bjut.hrregister", "cn.edu.bjut.websocket",
         "cn.edu.bjut.interceptor", "cn.edu.bjut.result",
         "cn.edu.bjut.managerlogin", "cn.edu.bjut.enterpriseregister",
         "cn.edu.bjut.manageridentified", "cn.edu.bjut.oss", "cn.edu.bjut.jwt",
         "cn.edu.bjut.studentregister", "cn.edu.bjut.hrpostmanagement",
-        "cn.edu.bjut.entity","cn.edu.bjut.studentsearchpost"})
+        "cn.edu.bjut.entity","cn.edu.bjut.studentpostview","cn.edu.bjut.studentsearchpost"})
 @Configuration
 public class AppConfig {
     @Bean

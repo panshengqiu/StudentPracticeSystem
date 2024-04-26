@@ -26,6 +26,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="student-search-post" />
         <module name="manager-identify" />
+        <module name="student-post-view" />
         <module name="hr-register" />
         <module name="jwt-utils" />
         <module name="manager-login" />
@@ -54,6 +55,7 @@
       <module name="manager-login" options="-parameters" />
       <module name="parent-module" options="-parameters" />
       <module name="practice-springboot-starter" options="-parameters" />
+      <module name="student-post-view" options="-parameters" />
       <module name="student-register" options="-parameters" />
       <module name="student-resume-produce" options="-parameters" />
       <module name="student-search-post" options="-parameters" />

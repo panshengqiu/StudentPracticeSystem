@@ -25,4 +25,5 @@ public class Post {
     private String workCity;
     private String status;
     private String enterpriseName;
+    private String month;
 }
