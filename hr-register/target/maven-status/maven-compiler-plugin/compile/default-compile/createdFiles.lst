@@ -1,0 +1,4 @@
+cn\edu\bjut\hrregister\mapper\HrRegisterMapper.class
+cn\edu\bjut\hrregister\service\HrRegisterService.class
+cn\edu\bjut\hrregister\controller\HrRegisterController.class
+cn\edu\bjut\hrregister\service\implement\HrRegisterImpl.class

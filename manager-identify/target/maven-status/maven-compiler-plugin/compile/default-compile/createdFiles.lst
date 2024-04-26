@@ -1,0 +1,4 @@
+cn\edu\bjut\manageridentified\controller\ManagerIdentifiedController.class
+cn\edu\bjut\manageridentified\mapper\ManagerIdentifiedMapper.class
+cn\edu\bjut\manageridentified\service\implement\ManagerIdentifyImpl.class
+cn\edu\bjut\manageridentified\service\ManagerIdentifyService.class
