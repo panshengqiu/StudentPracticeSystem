@@ -1,6 +1,0 @@
-cn\edu\bjut\studentregister\mapper\StudentVerifyCode.class
-cn\edu\bjut\studentregister\service\StudentRegisterService.class
-cn\edu\bjut\studentregister\mapper\StudentMapperRegister.class
-cn\edu\bjut\studentregister\service\implement\StudentMessageImpl.class
-cn\edu\bjut\studentregister\service\implement\StudentRegisterImpl.class
-cn\edu\bjut\studentregister\service\StudentMessageService.class

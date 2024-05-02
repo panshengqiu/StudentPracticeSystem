@@ -88,6 +88,14 @@ public class LoginCheckInterceptor implements HandlerInterceptor {
             log.info("测试路径，放行");
             return true;
         }
+        if(url.contains("sendEnterpriseNameGetInfo")){
+            log.info("测试路径，放行");
+            return true;
+        }
+        if(url.contains("sendEnterpriseNameGetAllPost")){
+            log.info("测试路径，放行");
+            return true;
+        }
 
 
 

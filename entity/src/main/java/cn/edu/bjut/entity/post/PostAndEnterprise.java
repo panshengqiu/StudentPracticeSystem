@@ -31,4 +31,5 @@ public class PostAndEnterprise
     private String address;
     private String enterpriseDescription;
     private String logoUrl;
+    private String enterpriseId;
 }
