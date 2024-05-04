@@ -1,6 +1,5 @@
 package cn.edu.bjut.practice.config;
 
-import cn.edu.bjut.interceptor.LoginCheckInterceptor;
 import cn.edu.bjut.jwt.JWTUtils;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
@@ -18,26 +17,23 @@ import cn.edu.bjut.oss.AliOSSUtils;
 @MapperScan("cn.edu.bjut.practice.mapper")
 @MapperScan("cn.edu.bjut.hrpostmanagement.mapper")
 @MapperScan("cn.edu.bjut.studentsearchpost.mapper")
+@MapperScan("cn.edu.bjut.studentpostview.mapper")
 @MapperScan("cn.edu.bjut.postRecord.mapper")
-@MapperScan("cn.edu.bjut.produceResume.mapper")
+@MapperScan("cn.edu.bjut.studentsubmitresume.mapper")
+@MapperScan("cn.edu.bjut.produceresume.mapper")
 @ComponentScan(basePackages = {"cn.edu.bjut.hrregister", "cn.edu.bjut.websocket",
         "cn.edu.bjut.interceptor", "cn.edu.bjut.result",
         "cn.edu.bjut.managerlogin", "cn.edu.bjut.enterpriseregister",
         "cn.edu.bjut.manageridentified", "cn.edu.bjut.oss", "cn.edu.bjut.jwt",
         "cn.edu.bjut.studentregister", "cn.edu.bjut.hrpostmanagement",
-        "cn.edu.bjut.produceresume","cn.edu.bjut.postRecord",
-        "cn.edu.bjut.entity","cn.edu.bjut.studentsearchpost"})
+        "cn.edu.bjut.entity","cn.edu.bjut.studentpostview","cn.edu.bjut.studentsearchpost","cn.edu.bjut.postRecord","cn.edu.bjut.studentsubmitresume", "cn.edu.bjut.produceresume"})
 @Configuration
-
 public class AppConfig {
     @Bean
     public AliOSSUtils aliOSSUtils() {
         return new AliOSSUtils();
     }
-    @Bean
-    public LoginCheckInterceptor loginCheckInterceptor(){
-        return new LoginCheckInterceptor();
-    }
+
     @Bean
     public AliOSSProperties aliOSSProperties() {
         return new AliOSSProperties();

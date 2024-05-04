@@ -14,4 +14,5 @@ public class PostFilter {
     String month;
     String salary;
     String smallType;
+    String input;
 }

@@ -17,6 +17,7 @@
       <directory url="file://$PROJECT_DIR$/manager-identify/src/main/resources/archetype-resources" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/student-register/src/main/resources/archetype-resources" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/hr-post-management/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/student-submit-resume/src/main/resources/archetype-resources" includeSubdirectories="true" />
     </excludeFromCompile>
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
@@ -26,9 +27,11 @@
         <outputRelativeToContentRoot value="true" />
         <module name="student-search-post" />
         <module name="manager-identify" />
+        <module name="student-post-view" />
         <module name="hr-register" />
         <module name="jwt-utils" />
         <module name="manager-login" />
+        <module name="student-submit-resume" />
         <module name="practice-springboot-starter" />
         <module name="student-register" />
         <module name="post-record" />
@@ -56,9 +59,11 @@
       <module name="parent-module" options="-parameters" />
       <module name="post-record" options="-parameters" />
       <module name="practice-springboot-starter" options="-parameters" />
+      <module name="student-post-view" options="-parameters" />
       <module name="student-register" options="-parameters" />
       <module name="student-resume-produce" options="-parameters" />
       <module name="student-search-post" options="-parameters" />
+      <module name="student-submit-resume" options="-parameters" />
       <module name="websocket-chat" options="" />
     </option>
   </component>
