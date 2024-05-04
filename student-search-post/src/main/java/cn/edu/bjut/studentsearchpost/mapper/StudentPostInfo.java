@@ -12,7 +12,7 @@ import java.util.List;
 public interface StudentPostInfo {
     @Select("SELECT p.*, e.name as enterprise_name\n" +
             "FROM post p\n" +
-            "JOIN enterprise e ON p.hr_id = e.id\n" +
+            "JOIN enterprise e JOIN practice.human_resource hr ON p.hr_id = hr.id AND hr.firm_id=e.id\n" +
             "WHERE p.small_post_id = #{id}\n" +
             "ORDER BY p.delivery_deadline;\n")
     List<Post> getAllPostsSortedByDeliveryDeadline(@Param("id") String id);

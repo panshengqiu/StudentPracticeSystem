@@ -14,5 +14,5 @@ public class PostRecordReturn {
     private String workCity;
     private LocalDate approvalTime;
     private String enterpriseName;
-
+    private String status;
 }

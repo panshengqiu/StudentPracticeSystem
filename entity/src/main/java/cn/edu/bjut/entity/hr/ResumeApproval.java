@@ -16,7 +16,7 @@ public class ResumeApproval {
     private Submit submit;
     private Student student;
     private LocalDateTime approvalTime;
-    private String approvalStage;
+    private ResumeApprovalStage resumeApprovalStage;
     private Integer hrId;
     private LocalDateTime updateTime;
 }

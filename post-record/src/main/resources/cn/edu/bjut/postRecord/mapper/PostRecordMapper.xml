@@ -6,13 +6,22 @@
 
 
     <select id="getAllApproval" resultType="cn.edu.bjut.entity.PostRecordReturn">
-        SELECT p.name as postName,p.work_city as workCity,ra.approval_time as approvalTime,e.name as enterpriseName
-        FROM resume_approval ra
+        SELECT p.name as postName,p.work_city as workCity,ra.approval_time as approvalTime,e.name as enterpriseName,a.status as status
+        FROM approval_stage as a
+                 JOIN resume_approval ra ON a.id=ra.approval_stage_id
                  JOIN submit s ON ra.submit_id = s.id
                  JOIN post   p ON s.post_id=p.id
                  JOIN human_resource hs ON p.hr_id=hs.id
                  JOIN enterprise e ON hs.firm_id=e.id
-        WHERE s.stu_id = #{studentId} AND ra.approval_stage=#{approvalStage}
+        WHERE s.stu_id = #{student.id} AND a.stage_name=#{resumeApprovalStage.stageName}
+    </select>
+    <select id="getAllSeenApproval" resultType="cn.edu.bjut.entity.PostRecordReturn">
+        SELECT p.name as postName,p.work_city as workCity,e.name as enterpriseName
+        FROM submit as s
+        JOIN post p ON s.post_id=p.id
+        JOIN human_resource hs ON p.hr_id=hs.id
+        JOIN enterprise e ON hs.firm_id=e.id
+        WHERE s.stu_id = #{resume.student.id} AND s.status=#{status}
     </select>
 
 </mapper>
