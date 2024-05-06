@@ -10,8 +10,23 @@
         values (#{postSmallType.id}, #{name}, #{description}, #{demand}, #{pay}, #{minInternship}, #{workPlace},
                 #{deliveryDeadline}, #{humanResource.id}, #{workCity}, #{status});
     </insert>
+    <update id="updatePostInfo">
+        update post
+        set small_post_id = (select id from post_small_type where post_small_type.name = #{postSmallType.name}),
+            name = #{name},
+            description = #{description},
+            demand = #{demand},
+            pay = #{pay},
+            min_internship = #{minInternship},
+            workplace = #{workPlace},
+            work_city = #{workCity},
+            delivery_deadline = #{deliveryDeadline},
+            status = #{status}
+        where id = #{id}
+    </update>
 
-    <select id="selectPostInfo" resultType="map">
+
+    <select id="selectPostsInfo" resultType="map">
         select post.name,
                post.id,
                post_small_type.name as postSmallTypeName,
@@ -22,12 +37,74 @@
                post.status
         from post_small_type,
              post
-        where post.small_post_id = post_small_type.id;
+        where post.small_post_id = post_small_type.id and hr_id=#{id};
     </select>
     <select id="selectSmallPostIdOnName" resultType="java.lang.Integer">
         select id from post_small_type where name = #{name}
     </select>
     <select id="selectAllSmallTypeName" resultType="java.lang.String">
         select name from post_small_type;
+    </select>
+    <select id="selectPostsInfoConditionally" resultType="map">
+        select post.name,
+               post.id,
+               post_small_type.name as postSmallTypeName,
+               post.min_internship,
+               post.pay,
+               post.delivery_deadline,
+               post.work_city,
+               post.status
+        from post_small_type,
+             post
+        <where>
+            post.small_post_id = post_small_type.id
+            and hr_id=#{humanResource.id}
+            <if test="name != null and name != ''">
+                and post.name=#{name}
+            </if>
+            <if test="deliveryDeadline != null">
+                and post.delivery_deadline=#{deliveryDeadline}
+            </if>
+            <if test="status != null and status != ''">
+                and post.status=#{status}
+            </if>
+        </where>
+    </select>
+
+    <select id="selectPostInfoOnId" resultType="map">
+        select post.name,
+               post.id,
+               post_small_type.name as postSmallTypeName,
+               post.min_internship  as minInternship,
+               post.pay,
+               post.delivery_deadline as deliveryDeadline,
+               post.work_city as workCity,
+               post.workplace as workPlace,
+               post.status,
+               post.description,
+               post.demand
+        from post_small_type,
+             post
+        where post.id=#{id} and post.small_post_id=post_small_type.id
+    </select>
+    <select id="selectPostsWorkCities" resultType="java.lang.String">
+        select work_city from post;
+    </select>
+    <select id="selectFirmPosts" resultType="java.util.Map">
+        select post.name,
+               post.id,
+               post_small_type.name as postSmallTypeName,
+               post.min_internship,
+               post.pay,
+               post.delivery_deadline,
+               post.work_city,
+               post.status
+        from post_small_type,
+             post
+        where post.small_post_id = post_small_type.id
+          and post.hr_id in (select id
+                             from human_resource
+                             where firm_id = (select firm_id from human_resource where id = #{id}))
+
     </select>
 </mapper>

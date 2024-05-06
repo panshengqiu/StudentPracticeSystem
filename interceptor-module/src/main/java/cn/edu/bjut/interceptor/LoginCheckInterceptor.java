@@ -86,8 +86,6 @@ public class LoginCheckInterceptor implements HandlerInterceptor {
         }
 
 
-
-
         // 3. 获取请求头的令牌
         String jwt = req.getHeader("Authorization");
         log.info("令牌：{}", jwt);

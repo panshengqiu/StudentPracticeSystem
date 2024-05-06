@@ -15,4 +15,5 @@ public class Submit {
     private Post post;
     private Resume resume;
     private LocalDateTime submitTime;
+    private String status;
 }

@@ -9,6 +9,7 @@
     <modules>
         <module>../student-search-post</module>
         <module>../aliyun-ai-api</module>
+        <module>../hr-resume-management</module>
     </modules>
 
     <packaging>pom</packaging>

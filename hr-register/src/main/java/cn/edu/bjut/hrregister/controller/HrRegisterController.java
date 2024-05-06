@@ -1,15 +1,14 @@
 package cn.edu.bjut.hrregister.controller;
 
 
-import cn.edu.bjut.entity.enterprise.Enterprise;
 import cn.edu.bjut.entity.hr.HumanResource;
 import cn.edu.bjut.hrregister.service.HrRegisterService;
 import cn.edu.bjut.result.Result;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import java.util.List;
 
 @RestController
 public class HrRegisterController {
@@ -18,6 +17,7 @@ public class HrRegisterController {
     private HrRegisterService hrRegisterService;
 
     @PostMapping("/hrRegister")
+    @Transactional
     public Result register(@RequestBody HumanResource humanResource){
         System.out.println("企业名称：" + humanResource.getEnterprise().getName());
         System.out.println("企业社会信用代码：" + humanResource.getEnterprise().getCreditCode());

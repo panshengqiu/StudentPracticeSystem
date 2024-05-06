@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.edu.bjut.hrresumemanagement.mapper.HrResumeManagementMapper">
+    <insert id="insertResumeApproval">
+        insert into resume_approval(submit_id, approval_time, approval_stage_id, hr_id, update_time)
+        values (#{submit.id},#{approvalTime},#{resumeApprovalStage.id},#{humanResource.id},#{updateTime})
+    </insert>
+    <update id="updateSubmitStatus">
+        update submit set status=#{status} where id=#{id}
+    </update>
+
+    <select id="selectResumeSubmitOnStage" resultType="java.util.Map">
+        select submit.submit_time as submitTime,
+               resume.resume_url  as resumeUrl,
+               resume.name        as resumeName,
+               resume.stu_id      as studentId,
+               student.name       as studentName,
+               student.head_url   as studentHeadUrl,
+               submit.status      as submitStatus,
+               submit.id          as submitId
+        from submit,
+             resume,
+             student,
+             post
+        where submit.post_id = #{post.id}
+          and submit.post_id = post.id
+          and submit.resume_id = resume.id
+          and resume.stu_id = student.id
+          and submit.status = #{status}
+    </select>
+    <select id="selectResumeSubmitOnApprovalStage" resultType="java.util.Map">
+        select submit.submit_time as submitTime,
+               resume.resume_url as resumeUrl,
+               resume.name as resumeName,
+               resume.stu_id as studentId,
+               student.head_url studentHeadUrl,
+               approval_stage.stage_name as approvalStageName,
+               resume_approval.approval_time as approvalTime,
+               resume_approval.update_time as approvalUpdateTime,
+               resume_approval.id as approvalId,
+               submit.id as submitId,
+               approval_stage.status
+        from submit,
+             resume,
+             student,
+             post,
+             resume_approval,
+             approval_stage
+        where submit.post_id = #{submit.post.id}
+          and submit.post_id = post.id
+          and resume_approval.submit_id = submit.id
+          and submit.resume_id = resume.id
+          and resume.stu_id = student.id
+          and approval_stage.id = resume_approval.approval_stage_id
+          and approval_stage.stage_name=#{resumeApprovalStage.stageName}
+    </select>
+    <select id="selectSubmit" resultType="java.util.Map">
+        select submit.id          as submitId,
+               post.id            as postId,
+               post.name          as postName,
+               student.id         as studentId,
+               student.name       as studentName,
+               resume.resume_url  as resumeUrl,
+               submit.submit_time as submitTime,
+               submit.status
+        from submit,
+             resume,
+             student,
+             post,
+             human_resource
+        where human_resource.id = #{id}
+          and post.hr_id = human_resource.id
+          and submit.post_id = post.id
+          and submit.resume_id = resume.id
+          and resume.stu_id = student.id
+    </select>
+    <select id="selectSubmitConditional" resultType="java.util.Map">
+        select submit.id          as submitId,
+               post.id            as postId,
+               post.name          as postName,
+               student.id         as studentId,
+               student.name       as studentName,
+               resume.resume_url  as resumeUrl,
+               submit.submit_time as submitTime,
+               submit.status
+        from submit,
+             resume,
+             student,
+             post,
+             human_resource
+        where human_resource.id = #{post.humanResource.id}
+          <if test="post.name != null and post.name != ''">
+              and post.name = #{post.name}
+          </if>
+          <if test="resume.student.name != null and resume.student.name != ''">
+              and student.name = #{resume.student.name}
+          </if>
+          <if test="submitTime != null">
+              and Date(submit.submit_time) = Date(#{submitTime})
+          </if>
+          and post.hr_id = human_resource.id
+          and submit.post_id = post.id
+          and submit.resume_id = resume.id
+          and resume.stu_id = student.id
+    </select>
+    <select id="selectResumeApprovalStageId" resultType="java.lang.Integer">
+        select id from approval_stage where stage_name=#{stageName} and status=#{status};
+    </select>
+    <select id="selectResumeApprovalOnsubmitId" resultType="cn.edu.bjut.entity.hr.ResumeApproval">
+        select * from resume_approval where submit_id=#{id};
+    </select>
+    <select id="selectApprovalRecord" resultType="java.util.Map">
+        select resume.resume_url as resumeUrl,
+               student.name as studentName,
+               post.name as postName,
+               approval_stage.stage_name as approvalStageName,
+               resume_approval.update_time as approvalUpdateTime,
+               resume_approval.id as approvalId,
+               submit.id as submitId,
+               approval_stage.status as approvalStageStatus
+        from submit,
+             resume,
+             student,
+             post,
+             resume_approval,
+             approval_stage,
+             human_resource
+        where human_resource.id=#{id}
+          and resume_approval.hr_id=human_resource.id
+          and approval_stage.id = resume_approval.approval_stage_id
+          and resume_approval.submit_id = submit.id
+          and submit.post_id = post.id
+          and submit.resume_id = resume.id
+          and resume.stu_id = student.id
+    </select>
+    <select id="selectApprovalRecordConditionally" resultType="java.util.Map">
+        select resume.resume_url as resumeUrl,
+        student.name as studentName,
+        post.name as postName,
+        approval_stage.stage_name as approvalStageName,
+        resume_approval.update_time as approvalUpdateTime,
+        resume_approval.id as approvalId,
+        submit.id as submitId,
+        approval_stage.status as approvalStageStatus
+        from submit,
+        resume,
+        student,
+        post,
+        resume_approval,
+        approval_stage,
+        human_resource
+        where human_resource.id=#{humanResource.id}
+        and resume_approval.hr_id=human_resource.id
+        and approval_stage.id = resume_approval.approval_stage_id
+        and resume_approval.submit_id = submit.id
+        and submit.post_id = post.id
+        and submit.resume_id = resume.id
+        and resume.stu_id = student.id
+        <if test="resumeApprovalStage.stageName!=null and resumeApprovalStage.stageName!=''">
+            and approval_stage.stage_name = #{resumeApprovalStage.stageName}
+        </if>
+        <if test="resumeApprovalStage.status!=null and resumeApprovalStage.status!=''">
+            and approval_stage.status = #{resumeApprovalStage.status}
+        </if>
+        <if test="submit.resume.student.name!=null and submit.resume.student.name!=''">
+            and student.name = #{submit.resume.student.name}
+        </if>
+        <if test="submit.post.name!=null and submit.post.name!=''">
+            and post.name = #{submit.post.name}
+        </if>
+    </select>
+</mapper>

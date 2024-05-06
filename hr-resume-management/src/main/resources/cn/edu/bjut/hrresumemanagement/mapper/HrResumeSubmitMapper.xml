@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.edu.bjut.hrresumemanagement.mapper.HrResumeSubmitMapper">
+
+    <select id="selectSubmitConditionallyOne" resultType="java.util.Map">
+        select submit.submit_time as submitTime,
+        resume.resume_url as resumeUrl,
+        resume.name as resumeName,
+        resume.stu_id as studentId,
+        student.name as studentName,
+        student.head_url as studentHeadUrl,
+        submit.status as submitStatus,
+        submit.id as submitId
+        from submit,
+        resume,
+        student,
+        post,
+        human_resource
+        where submit.status=#{status}
+        <if test="post.id != null and post.id != ''">
+            and post.id = #{post.id}
+        </if>
+        <if test="resume.student.name != null and resume.student.name != ''">
+            and student.name = #{resume.student.name}
+        </if>
+        <if test="submitTime != null">
+            and Date(submit.submit_time) = Date(#{submitTime})
+        </if>
+        and post.hr_id = human_resource.id
+        and submit.post_id = post.id
+        and submit.resume_id = resume.id
+        and resume.stu_id = student.id
+    </select>
+</mapper>
