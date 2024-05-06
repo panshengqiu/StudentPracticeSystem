@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/manager-identify/manager-identify.iml" filepath="$PROJECT_DIR$/manager-identify/manager-identify.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/practice-springboot-starter.iml" filepath="$PROJECT_DIR$/.idea/practice-springboot-starter.iml" />
     </modules>
   </component>
 </project>
