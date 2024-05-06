@@ -2,8 +2,17 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/ali-oss-utils/ali-oss-utils.iml" filepath="$PROJECT_DIR$/ali-oss-utils/ali-oss-utils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/enterprise-register/enterprise-register.iml" filepath="$PROJECT_DIR$/enterprise-register/enterprise-register.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hr-post-management/hr-post-management.iml" filepath="$PROJECT_DIR$/hr-post-management/hr-post-management.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hr-register/hr-register.iml" filepath="$PROJECT_DIR$/hr-register/hr-register.iml" />
       <module fileurl="file://$PROJECT_DIR$/manager-identify/manager-identify.iml" filepath="$PROJECT_DIR$/manager-identify/manager-identify.iml" />
+      <module fileurl="file://$PROJECT_DIR$/manager-login/manager-login.iml" filepath="$PROJECT_DIR$/manager-login/manager-login.iml" />
       <module fileurl="file://$PROJECT_DIR$/practice-springboot-starter.iml" filepath="$PROJECT_DIR$/practice-springboot-starter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/student-register/student-register.iml" filepath="$PROJECT_DIR$/student-register/student-register.iml" />
+      <module fileurl="file://$PROJECT_DIR$/student-resume-produce/student-resume-produce.iml" filepath="$PROJECT_DIR$/student-resume-produce/student-resume-produce.iml" />
+      <module fileurl="file://$PROJECT_DIR$/student-search-post/student-search-post.iml" filepath="$PROJECT_DIR$/student-search-post/student-search-post.iml" />
+      <module fileurl="file://$PROJECT_DIR$/websocket-chat/websocket-chat.iml" filepath="$PROJECT_DIR$/websocket-chat/websocket-chat.iml" />
     </modules>
   </component>
 </project>

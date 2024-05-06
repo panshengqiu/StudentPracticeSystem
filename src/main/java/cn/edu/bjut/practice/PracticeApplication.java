@@ -5,6 +5,7 @@ import cn.edu.bjut.practice.config.MyImportSelect;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Import;
+import cn.edu.bjut.practice.config.MyCorsConfiguration;
 
 @Import({AppConfig.class, MyImportSelect.class})
 @SpringBootApplication

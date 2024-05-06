@@ -2,7 +2,6 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/ali-oss-utils/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/aliyun-ai-api/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/enterprise-register/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/entity/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/entity/src/main/resources" charset="UTF-8" />
@@ -21,9 +20,11 @@
     <file url="file://$PROJECT_DIR$/result-module/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/student-post-view/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/student-register/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/student-resume-produce/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/student-search-post/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/student-submit-resume/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/websocket-chat/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/websocket-chat/src/main/resources" charset="UTF-8" />
   </component>

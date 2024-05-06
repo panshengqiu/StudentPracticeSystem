@@ -1,6 +1,6 @@
-D:\desktop\FilePrograme\IDEA2023\IEDAworkspace\practice-springboot-starter\student-register\src\main\java\cn\edu\bjut\studentregister\service\StudentRegisterService.java
-D:\desktop\FilePrograme\IDEA2023\IEDAworkspace\practice-springboot-starter\student-register\src\main\java\cn\edu\bjut\studentregister\service\implement\StudentMessageImpl.java
-D:\desktop\FilePrograme\IDEA2023\IEDAworkspace\practice-springboot-starter\student-register\src\main\java\cn\edu\bjut\studentregister\mapper\StudentMapperRegister.java
-D:\desktop\FilePrograme\IDEA2023\IEDAworkspace\practice-springboot-starter\student-register\src\main\java\cn\edu\bjut\studentregister\mapper\StudentVerifyCode.java
-D:\desktop\FilePrograme\IDEA2023\IEDAworkspace\practice-springboot-starter\student-register\src\main\java\cn\edu\bjut\studentregister\service\implement\StudentRegisterImpl.java
-D:\desktop\FilePrograme\IDEA2023\IEDAworkspace\practice-springboot-starter\student-register\src\main\java\cn\edu\bjut\studentregister\service\StudentMessageService.java
+/Users/jgd/Desktop/StudentPracticeSystem/student-register/src/main/java/cn/edu/bjut/studentregister/mapper/StudentVerifyCode.java
+/Users/jgd/Desktop/StudentPracticeSystem/student-register/src/main/java/cn/edu/bjut/studentregister/mapper/StudentMapperRegister.java
+/Users/jgd/Desktop/StudentPracticeSystem/student-register/src/main/java/cn/edu/bjut/studentregister/service/StudentRegisterService.java
+/Users/jgd/Desktop/StudentPracticeSystem/student-register/src/main/java/cn/edu/bjut/studentregister/service/StudentMessageService.java
+/Users/jgd/Desktop/StudentPracticeSystem/student-register/src/main/java/cn/edu/bjut/studentregister/service/implement/StudentRegisterImpl.java
+/Users/jgd/Desktop/StudentPracticeSystem/student-register/src/main/java/cn/edu/bjut/studentregister/service/implement/StudentMessageImpl.java
