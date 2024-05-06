@@ -10,7 +10,7 @@ import java.util.List;
 public interface PostByInput {
     @Select("SELECT p.*, e.name as enterprise_name\n" +
             "FROM post p\n" +
-            "JOIN enterprise e ON p.hr_id = e.id\n" +
+            "JOIN enterprise e JOIN practice.human_resource hr ON p.hr_id = hr.id AND hr.firm_id=e.id\n" +
             "WHERE p.name LIKE CONCAT('%', #{name}, '%');")
     List<Post> findByPostName(String postName);
 

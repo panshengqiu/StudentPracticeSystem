@@ -1,6 +1,7 @@
 package cn.edu.bjut.studentsearchpost.controller;
 
 import cn.edu.bjut.entity.post.Post;
+import cn.edu.bjut.entity.post.PostAndEnterprise;
 import cn.edu.bjut.entity.post.PostMainFilter;
 import cn.edu.bjut.studentsearchpost.mapper.MainFilterPost;
 import lombok.extern.slf4j.Slf4j;
@@ -18,8 +19,8 @@ public class StudentMainfilter {
     @Autowired
     private MainFilterPost mainFilterPost;
     @PostMapping("/sendMainFilter")
-    public List<Post> getPostFilter(@RequestBody PostMainFilter postFilter){
-        List<Post> posts = null;
+    public List<PostAndEnterprise> getPostFilter(@RequestBody PostMainFilter postFilter){
+        List<PostAndEnterprise> posts = null;
         if (!Objects.equals(postFilter.getRegion(), "") &&Objects.equals(postFilter.getMonth(), "")&& Objects.equals(postFilter.getSalary(), "")){
             //岗位信息-只有地域条件时
             posts = mainFilterPost.getPostByRegion(postFilter.getRegion(), postFilter.getInput());
@@ -56,8 +57,8 @@ public class StudentMainfilter {
     }
 
     @PostMapping("/sendMainFilterTime")
-    public List<Post> getPostFilterTime(@RequestBody PostMainFilter postFilter){
-        List<Post> posts = null;
+    public List<PostAndEnterprise> getPostFilterTime(@RequestBody PostMainFilter postFilter){
+        List<PostAndEnterprise> posts = null;
         if (!Objects.equals(postFilter.getRegion(), "") &&Objects.equals(postFilter.getMonth(), "")&& Objects.equals(postFilter.getSalary(), "")){
             //岗位信息-只有地域条件时
             posts = mainFilterPost.getPostByRegionTime(postFilter.getRegion(), postFilter.getInput());
