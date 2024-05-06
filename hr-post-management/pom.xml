@@ -8,7 +8,7 @@
         <relativePath>../parent-module/pom.xml</relativePath>
     </parent>
     <artifactId>hr-post-management</artifactId>
-    <name>Archetype - hr-post-management</name>
+    <name>hr-post-management</name>
     <url>http://maven.apache.org</url>
 
     <dependencies>
