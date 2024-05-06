@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="jwt-utils-1.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/jwt-utils/target/jwt-utils-1.0-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
