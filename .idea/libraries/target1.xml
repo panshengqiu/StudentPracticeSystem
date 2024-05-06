@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="target1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/enterprise-management/target/enterprise-management-1.0-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/enterprise-management/target/enterprise-register-1.0-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
