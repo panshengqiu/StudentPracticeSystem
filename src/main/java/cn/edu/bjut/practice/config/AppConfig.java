@@ -13,9 +13,9 @@ import cn.edu.bjut.oss.AliOSSUtils;
 @MapperScan("cn.edu.bjut.enterprise.mapper")
 @MapperScan("cn.edu.bjut.hrregister.mapper")
 @MapperScan("cn.edu.bjut.manageridentified.mapper")
-@MapperScan("cn.edu.bjut.studentregister.mapper")
 @MapperScan("cn.edu.bjut.practice.mapper")
 @MapperScan("cn.edu.bjut.hrpostmanagement.mapper")
+<<<<<<< HEAD
 @MapperScan("cn.edu.bjut.studentsearchpost.mapper")
 @MapperScan("cn.edu.bjut.studentpostview.mapper")
 @MapperScan("cn.edu.bjut.postRecord.mapper")
@@ -25,6 +25,17 @@ import cn.edu.bjut.oss.AliOSSUtils;
 @MapperScan("cn.edu.bjut.websocket.mapper")
 @MapperScan("cn.edu.bjut.hrresumemanagement.mapper")
 
+=======
+@MapperScan("cn.edu.bjut.websocket.mapper")
+@MapperScan("cn.edu.bjut.hrresumemanagement.mapper")
+
+@MapperScan("cn.edu.bjut.studentregister.mapper")
+@MapperScan("cn.edu.bjut.studentsearchpost.mapper")
+@MapperScan("cn.edu.bjut.produceresume.mapper")
+@MapperScan("cn.edu.bjut.postRecord.mapper")
+@MapperScan("cn.edu.bjut.studentsubmitresume.mapper")
+@MapperScan("cn.edu.bjut.studentpostview.mapper")
+>>>>>>> 86dc6f1 (I'm commited)
 @ComponentScan(basePackages = {"cn.edu.bjut.hrregister", "cn.edu.bjut.websocket",
         "cn.edu.bjut.interceptor", "cn.edu.bjut.result",
         "cn.edu.bjut.managerlogin", "cn.edu.bjut.enterprise",
@@ -34,8 +45,13 @@ import cn.edu.bjut.oss.AliOSSUtils;
         "cn.edu.bjut.entity","cn.edu.bjut.studentpostview","cn.edu.bjut.studentsearchpost","cn.edu.bjut.postRecord","cn.edu.bjut.studentsubmitresume", "cn.edu.bjut.produceresume"})
 
         "cn.edu.bjut.studentregister", "cn.edu.bjut.hrpostmanagement","cn.edu.bjut.hrresumemanagement",
+<<<<<<< HEAD
         "cn.edu.bjut.entity","cn.edu.bjut.studentsearchpost","cn.edu.bjut.produceresume"})
 
+=======
+        "cn.edu.bjut.entity","cn.edu.bjut.studentsearchpost","cn.edu.bjut.produceresume",
+        "cn.edu.bjut.postRecord","cn.edu.bjut.studentsubmitresume","cn.edu.bjut.studentpostview"})
+>>>>>>> 86dc6f1 (I'm commited)
 @Configuration
 public class AppConfig {
     @Bean
