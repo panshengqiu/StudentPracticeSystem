@@ -26,6 +26,10 @@
         insert into education_information(stu_id, start_date,over_date,school,score,`rank`,major,education,lesson_description,education_index)
         values(#{student.id},#{startDate} ,#{overDate}, #{school} ,#{score} ,#{rank},#{major},#{education},#{lessonDescription},#{educationIndex});
     </insert>
+    <insert id="insertLocalResume">
+        insert into resume(stu_id,resume_url,name,uid)
+        values(#{student.id},#{resumeUrl},#{name},#{uid}) ;
+    </insert>
     <update id="updateCertification">
         UPDATE certificate
         SET start_time = #{startTime}, name = #{name}
@@ -101,6 +105,10 @@
         WHERE stu_id = #{student.id}
           AND education_index = #{educationIndex}
     </delete>
+    <delete id="deleteLocalResume">
+        DELETE FROM resume
+        where resume_url=#{resumeUrl} AND name=#{name} AND uid=#{uid};
+    </delete>
     <select id="getAllCertificates" resultType="cn.edu.bjut.entity.student.performance.Certification">
         SELECT * FROM certificate WHERE stu_id = #{student.id};
 
@@ -131,5 +139,8 @@
     </select>
     <select id="getAllEducation" resultType="cn.edu.bjut.entity.student.exprience.EducationInfo">
         SELECT * FROM education_information WHERE stu_id = #{student.id};
+    </select>
+    <select id="getAllResume" resultType="cn.edu.bjut.entity.student.other.Resume">
+        SELECT * FROM resume WHERE stu_id=#{student.id};
     </select>
 </mapper>

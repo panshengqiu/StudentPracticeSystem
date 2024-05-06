@@ -4,6 +4,7 @@ import cn.edu.bjut.entity.student.exprience.EducationInfo;
 import cn.edu.bjut.entity.student.exprience.OrganizationExperience;
 import cn.edu.bjut.entity.student.exprience.PracticeExperience;
 import cn.edu.bjut.entity.student.exprience.ProjectExperience;
+import cn.edu.bjut.entity.student.other.Resume;
 import cn.edu.bjut.entity.student.performance.Certification;
 import cn.edu.bjut.produceresume.mapper.StudentResumeMapper;
 import lombok.extern.slf4j.Slf4j;
@@ -157,5 +158,20 @@ public class StudentResumeService implements StudentResumeServiceInterface {
     @Override
     public List<EducationInfo> getAllEducation(Integer studentId) {
         return studentResumeMapper.getAllEducation(studentId);
+    }
+
+    @Override
+    public Integer insertLocalResume(Resume resume) {
+        return studentResumeMapper.insertLocalResume(resume);
+    }
+
+    @Override
+    public Integer deleteLocalResume(Resume resume) {
+        return studentResumeMapper.deleteLocalResume(resume);
+    }
+
+    @Override
+    public List<Resume> getAllResume(Integer studentId) {
+        return studentResumeMapper.getAllResume(studentId);
     }
 }

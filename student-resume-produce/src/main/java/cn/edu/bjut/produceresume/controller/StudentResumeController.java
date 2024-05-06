@@ -4,6 +4,7 @@ import cn.edu.bjut.entity.student.exprience.EducationInfo;
 import cn.edu.bjut.entity.student.exprience.OrganizationExperience;
 import cn.edu.bjut.entity.student.exprience.PracticeExperience;
 import cn.edu.bjut.entity.student.exprience.ProjectExperience;
+import cn.edu.bjut.entity.student.other.Resume;
 import cn.edu.bjut.entity.student.other.Student;
 import cn.edu.bjut.entity.student.performance.Certification;
 import cn.edu.bjut.jwt.JWTUtils;
@@ -107,6 +108,26 @@ public class StudentResumeController {
         return Result.success("Received project information: "+studentId);
 //        return StuService.saveCertification(certification, request);
     }
+    @PostMapping("/saveLocalResume")
+    public Result saveLocalResume(@RequestBody Resume resume, HttpServletRequest request) {
+        // 在这里处理接收到的教育信息，可以将信息保存到数据库或者进行其他操作
+        System.out.println("Received project information: " +resume.toString());
+        String jwt = request.getHeader("Authorization");
+        Claims claims = JWTUtils.parseJWT(jwt);
+        log.info("校验解析后的令牌：{}", claims);
+
+        // 获取当前登入的学生的id号
+        Integer studentId = (Integer) claims.get("id");
+        String username = (String) claims.get("username");
+        student.setId(studentId);
+        resume.setStudent(student);
+        System.out.println(studentId);
+        System.out.println(username);
+        Integer localResume=studentResumeService.insertLocalResume(resume);
+        return Result.success("Received project information: "+localResume);
+//        return StuService.saveCertification(certification, request);
+    }
+
     @PostMapping("/certification")
     public Result saveCertificationInfo(@RequestBody Certification certification, HttpServletRequest request) {
         // 在这里处理接收到的教育信息，可以将信息保存到数据库或者进行其他操作
@@ -197,6 +218,20 @@ public class StudentResumeController {
         Integer deleteCertification=studentResumeService.deleteCertification(certification);
         return Result.success("Received deleteCertification information: "+deleteCertification);
     }
+    @PostMapping("/deleteLocalResume")
+    public Result deleteLocalResume(@RequestBody Resume resume, HttpServletRequest request) {
+        // 获取当前登入的学生的id号
+        String jwt = request.getHeader("Authorization");
+        Claims claims = JWTUtils.parseJWT(jwt);
+        log.info("校验解析后的令牌：{}", claims);
+        // 获取当前登入的学生的id号
+        Integer studentId = (Integer) claims.get("id");
+        String username = (String) claims.get("username");
+        student.setId(studentId);
+        resume.setStudent(student);
+        Integer deleteLocalResume=studentResumeService.deleteLocalResume(resume);
+        return Result.success("Received deleteCertification information: "+deleteLocalResume);
+    }
     @GetMapping("/iniEducation")
     public Result iniEducation(HttpServletRequest request){
         String jwt = request.getHeader("Authorization");
@@ -259,5 +294,17 @@ public class StudentResumeController {
         List<OrganizationExperience> organizationExperiencesList = studentResumeService.getAllOrganization(studentId);
         System.out.println(organizationExperiencesList.toString());
         return Result.success(organizationExperiencesList);
+    }
+    @GetMapping("/iniLocalResume")
+    public Result iniLocalResume(HttpServletRequest request){
+        String jwt = request.getHeader("Authorization");
+        Claims claims = JWTUtils.parseJWT(jwt);
+        log.info("校验解析后的令牌：{}", claims);
+
+        // 获取当前登入的学生的id号
+        Integer studentId = (Integer) claims.get("id");
+        List<Resume> localResumeList = studentResumeService.getAllResume(studentId);
+        System.out.println(localResumeList.toString());
+        return Result.success(localResumeList);
     }
 }

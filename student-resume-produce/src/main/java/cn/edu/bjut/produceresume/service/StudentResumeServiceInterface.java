@@ -4,6 +4,7 @@ import cn.edu.bjut.entity.student.exprience.EducationInfo;
 import cn.edu.bjut.entity.student.exprience.OrganizationExperience;
 import cn.edu.bjut.entity.student.exprience.PracticeExperience;
 import cn.edu.bjut.entity.student.exprience.ProjectExperience;
+import cn.edu.bjut.entity.student.other.Resume;
 import cn.edu.bjut.entity.student.performance.Certification;
 
 import java.util.List;
@@ -37,4 +38,10 @@ public interface StudentResumeServiceInterface {
 
 
     List<EducationInfo> getAllEducation(Integer studentId);
+
+    Integer insertLocalResume(Resume resume);
+
+    Integer deleteLocalResume(Resume resume);
+
+    List<Resume> getAllResume(Integer studentId);
 }

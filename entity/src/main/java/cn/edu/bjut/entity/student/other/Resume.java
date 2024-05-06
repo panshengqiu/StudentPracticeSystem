@@ -14,5 +14,6 @@ public class Resume {
     private Integer id;
     private Student student;
     private String resumeUrl;
+    private String uid;
     private String name;
 }

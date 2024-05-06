@@ -4,6 +4,7 @@ import cn.edu.bjut.entity.student.exprience.EducationInfo;
 import cn.edu.bjut.entity.student.exprience.OrganizationExperience;
 import cn.edu.bjut.entity.student.exprience.PracticeExperience;
 import cn.edu.bjut.entity.student.exprience.ProjectExperience;
+import cn.edu.bjut.entity.student.other.Resume;
 import cn.edu.bjut.entity.student.performance.Certification;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -67,4 +68,10 @@ public interface StudentResumeMapper {
     Integer updateEducationAfterDelete(EducationInfo educationInfo);
 
     List<EducationInfo> getAllEducation(Integer studentId);
+
+    Integer insertLocalResume(Resume resume);
+
+    Integer deleteLocalResume(Resume resume);
+
+    List<Resume> getAllResume(Integer studentId);
 }
