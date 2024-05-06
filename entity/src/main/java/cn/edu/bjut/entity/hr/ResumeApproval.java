@@ -25,4 +25,5 @@ public class ResumeApproval {
     private HumanResource humanResource;
 
     private LocalDateTime updateTime;
+    private HumanResource humanResource;
 }

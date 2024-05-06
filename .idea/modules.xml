@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/hr-register/hr-register.iml" filepath="$PROJECT_DIR$/hr-register/hr-register.iml" />
       <module fileurl="file://$PROJECT_DIR$/manager-identify/manager-identify.iml" filepath="$PROJECT_DIR$/manager-identify/manager-identify.iml" />
 <<<<<<< HEAD
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/manager-login/manager-login.iml" filepath="$PROJECT_DIR$/manager-login/manager-login.iml" />
       <module fileurl="file://$PROJECT_DIR$/practice-springboot-starter.iml" filepath="$PROJECT_DIR$/practice-springboot-starter.iml" />
       <module fileurl="file://$PROJECT_DIR$/student-register/student-register.iml" filepath="$PROJECT_DIR$/student-register/student-register.iml" />
@@ -16,6 +17,9 @@
       <module fileurl="file://$PROJECT_DIR$/websocket-chat/websocket-chat.iml" filepath="$PROJECT_DIR$/websocket-chat/websocket-chat.iml" />
 =======
 >>>>>>> 57dbf09 (I'm commit)
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/practice-springboot-starter.iml" filepath="$PROJECT_DIR$/.idea/practice-springboot-starter.iml" />
+>>>>>>> 997d934 (...)
     </modules>
   </component>
 </project>
