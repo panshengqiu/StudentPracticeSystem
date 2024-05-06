@@ -8,8 +8,13 @@
   <url>http://maven.apache.org</url>
     <modules>
         <module>../student-search-post</module>
+<<<<<<< HEAD
         <module>../student-post-view</module>
         <module>../student-submit-resume</module>
+=======
+        <module>../aliyun-ai-api</module>
+        <module>../hr-resume-management</module>
+>>>>>>> 57dbf09 (I'm commit)
     </modules>
 
     <packaging>pom</packaging>

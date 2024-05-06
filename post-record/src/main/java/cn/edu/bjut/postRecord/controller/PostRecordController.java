@@ -45,6 +45,7 @@ public class PostRecordController {
         student.setId(studentId);
         resumeApproval.setStudent(student);
         log.info("企业名称：{}",resumeApproval.getResumeApprovalStage().getStageName());
+
         System.out.println("这是aaaa"+resumeApproval);
         List<PostRecordReturn> resumeSubmitId = postRecordImplment.getAllApproval(resumeApproval);
         System.out.println("hhh"+resumeSubmitId.toString());
@@ -82,6 +83,10 @@ public class PostRecordController {
         log.info("企业名称：{}",resumeApproval.getResumeApprovalStage().getStageName());
         System.out.println("这是aaaa"+resumeApproval);
         List<PostRecordReturn> resumeSubmitId = postRecordImplment.getAllApprovalFail(resumeApproval);
+
+        System.out.println("这是"+resumeApproval);
+        List<PostRecordReturn> resumeSubmitId = postRecordImplment.getAllApproval(studentId,resumeApproval.getResumeApprovalStage().getStageName());
+
         System.out.println("hhh"+resumeSubmitId.toString());
         return Result.success(resumeSubmitId);
     }

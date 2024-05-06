@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.edu.bjut.enterprise.mapper.DepartmentMapper">
+
+    <update id="updateDepartmentInfo">
+        update human_resource
+        set
+        <trim suffixOverrides=",">
+            <if test="username != null and username != ''">
+                username = #{username},
+            </if>
+            <if test="phone != null and phone != ''">
+                phone = #{phone},
+            </if>
+            <if test="email != null and email != ''">
+                email = #{email},
+            </if>
+            <if test="department != null and department != ''">
+                department = #{department},
+            </if>
+            <if test="headUrl != null and headUrl != ''">
+                head_url = #{headUrl},
+            </if>
+        </trim>
+        where
+        id = #{id}
+
+    </update>
+    <select id="selectDepartmentInfo" resultType="cn.edu.bjut.entity.hr.HumanResource">
+        select username, head_url, phone, email, department
+        from human_resource
+        where id = #{id}
+    </select>
+</mapper>

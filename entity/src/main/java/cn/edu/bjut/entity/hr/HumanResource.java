@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class HumanResource {
     private Integer id;
+    private String department;
     private Enterprise enterprise;
     private String username;
     private String password;

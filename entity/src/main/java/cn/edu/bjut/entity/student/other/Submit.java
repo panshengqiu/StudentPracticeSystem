@@ -17,4 +17,5 @@ public class Submit {
     private String status;
     private LocalDateTime seenTime;
     private LocalDateTime submitTime;
+    private String status;
 }

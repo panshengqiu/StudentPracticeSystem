@@ -13,4 +13,8 @@ public class ResumeApprovalStage {
     private Integer id;
     private String stageName; // 阶段名称：初筛，笔试，面试，录取
     private String status; // 阶段状态： 通过，未通过，审核中
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 57dbf09 (I'm commit)

@@ -10,61 +10,38 @@
       <directory url="file://$PROJECT_DIR$/../manager-identify/src/main/resources/archetype-resources" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/../manager-login/src/main/resources/archetype-resources" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/../parent-module/src/main/resources/archetype-resources" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/enterprise-register/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/enterprise-management/src/main/resources/archetype-resources" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/entity/src/main/resources/archetype-resources" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/hr-register/src/main/resources/archetype-resources" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/jwt-utils/src/main/resources/archetype-resources" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/manager-identify/src/main/resources/archetype-resources" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/student-register/src/main/resources/archetype-resources" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/hr-post-management/src/main/resources/archetype-resources" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/student-submit-resume/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/aliyun-ai-api/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/hr-resume-management/src/main/resources/archetype-resources" includeSubdirectories="true" />
     </excludeFromCompile>
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
-      <profile name="Maven default annotation processors profile" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <module name="student-search-post" />
-        <module name="manager-identify" />
-        <module name="student-post-view" />
-        <module name="hr-register" />
-        <module name="jwt-utils" />
-        <module name="manager-login" />
-        <module name="student-submit-resume" />
-        <module name="practice-springboot-starter" />
-        <module name="student-register" />
-        <module name="post-record" />
-        <module name="enterprise-register" />
-        <module name="hr-post-management" />
-        <module name="interceptor-module" />
-        <module name="ali-oss-utils" />
-        <module name="websocket-chat" />
-        <module name="result-module" />
-        <module name="entity" />
-        <module name="student-resume-produce" />
-      </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="17" />
-  </component>
-  <component name="JavacSettings">
-    <option name="PREFER_TARGET_JDK_COMPILER" value="false" />
-    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="ali-oss-utils" options="-parameters" />
-      <module name="enterprise-register" options="-parameters" />
-      <module name="hr-post-management" options="-parameters" />
-      <module name="hr-register" options="-parameters" />
-      <module name="manager-identify" options="-parameters" />
-      <module name="manager-login" options="-parameters" />
-      <module name="parent-module" options="-parameters" />
-      <module name="post-record" options="-parameters" />
-      <module name="practice-springboot-starter" options="-parameters" />
-      <module name="student-post-view" options="-parameters" />
-      <module name="student-register" options="-parameters" />
-      <module name="student-resume-produce" options="-parameters" />
-      <module name="student-search-post" options="-parameters" />
-      <module name="student-submit-resume" options="-parameters" />
-      <module name="websocket-chat" options="" />
-    </option>
+    <bytecodeTargetLevel>
+      <module name="ali-oss-utils" target="17" />
+      <module name="aliyun-ai-api" target="17" />
+      <module name="enterprise-management" target="17" />
+      <module name="entity" target="17" />
+      <module name="hr-post-management" target="17" />
+      <module name="hr-register" target="17" />
+      <module name="interceptor-module" target="17" />
+      <module name="jwt-utils" target="17" />
+      <module name="manager-identify" target="17" />
+      <module name="manager-login" target="17" />
+      <module name="parent-module" target="17" />
+      <module name="post-record" target="17" />
+      <module name="practice-springboot-starter" target="17" />
+      <module name="result-module" target="17" />
+      <module name="student-register" target="17" />
+      <module name="student-resume-produce" target="17" />
+      <module name="student-search-post" target="17" />
+      <module name="websocket-chat" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>

@@ -55,7 +55,6 @@ public class WebSocketController {
      */
     private synchronized void updateFriendInformationList() {
         webSocketSession.forEach((key, val) -> {
-
             // 初始化存储属于自己的好友列表 排除自己
             List<Friends> friends = new ArrayList<>();
             // 迭代所有好友列表
@@ -67,7 +66,7 @@ public class WebSocketController {
                 }
             });
             // 发送消息
-            sendP2PMessage(key, JSON.toJSONString(Messages.builder().type("updateFriendsList").receiveNickname(key).messages(friends).build()));
+            sendP2PMessage(key, JSON.toJSONString(Messages.builder().type("updateFriendsList").sendNickname(key).messages(friends).build()));
         });
     }
 
