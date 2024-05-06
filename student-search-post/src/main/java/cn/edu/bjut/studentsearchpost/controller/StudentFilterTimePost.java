@@ -1,6 +1,7 @@
 package cn.edu.bjut.studentsearchpost.controller;
 
 import cn.edu.bjut.entity.post.Post;
+import cn.edu.bjut.entity.post.PostAndEnterprise;
 import cn.edu.bjut.entity.post.PostFilter;
 import cn.edu.bjut.studentsearchpost.mapper.FilterPost;
 import lombok.extern.slf4j.Slf4j;
@@ -19,8 +20,8 @@ public class StudentFilterTimePost {
     private FilterPost filterPost;
 
     @PostMapping("/sendFilterTime")
-    public List<Post> getPostFilter(@RequestBody PostFilter postFilter) {
-        List<Post> posts = null;
+    public List<PostAndEnterprise> getPostFilter(@RequestBody PostFilter postFilter) {
+        List<PostAndEnterprise> posts = null;
         if (!Objects.equals(postFilter.getRegion(), "") &&Objects.equals(postFilter.getMonth(), "")&& Objects.equals(postFilter.getSalary(), "")){
             //岗位信息-只有地域条件时
             posts = filterPost.getPostByRegionTime(postFilter.getRegion(), postFilter.getSmallType());

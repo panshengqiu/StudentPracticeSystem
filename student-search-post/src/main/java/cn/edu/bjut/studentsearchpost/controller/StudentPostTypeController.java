@@ -1,10 +1,11 @@
 package cn.edu.bjut.studentsearchpost.controller;
 
-import cn.edu.bjut.entity.post.Post;
-import cn.edu.bjut.entity.post.PostBigType;
-import cn.edu.bjut.entity.post.PostSmallType;
-import cn.edu.bjut.entity.post.PostSmallTypeWithBigTypeName;
+import cn.edu.bjut.entity.post.*;
+import cn.edu.bjut.entity.student.other.Student;
+import cn.edu.bjut.jwt.JWTUtils;
 import cn.edu.bjut.studentsearchpost.mapper.*;
+import io.jsonwebtoken.Claims;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -60,9 +61,45 @@ public class StudentPostTypeController {
     }
     @Autowired
     private RecommandNewPost recommandNewPost;
-    @GetMapping("/recommandNew")
-    public List<Post> getRecommandPostsNew() {
-        List<Post> posts=recommandNewPost.getRecommandPostsNew();
+    @Autowired
+    private Student student;
+    @PostMapping("/recommandNew")
+    public List<PostAndEnterprise> getRecommandPostsNew(HttpServletRequest request) {
+        List<PostAndEnterprise> posts = null;
+        // 获取当前登入的学生的id号
+        String jwt = request.getHeader("Authorization");
+        Claims claims = JWTUtils.parseJWT(jwt);
+        log.info("校验解析后的令牌：{}", claims);
+        // 获取当前登入的学生的id号
+        Integer studentId = (Integer) claims.get("id");
+        student.setId(studentId);
+        if (recommandNewPost.countIntendedPostsByStuId(student.getId()) == 0) {
+            posts = recommandNewPost.getRecommandPostsNew();
+        }
+        else{
+            posts=recommandNewPost.getRecommandSpecificPostsNew(student.getId());
+        }
+        return posts;
+    }
+
+    @PostMapping("/recommandPopular")
+    public List<PostAndEnterprise> getRecommandPostsPopular(HttpServletRequest request) {
+        List<PostAndEnterprise> posts = null;
+        // 获取当前登入的学生的id号
+        String jwt = request.getHeader("Authorization");
+        Claims claims = JWTUtils.parseJWT(jwt);
+        log.info("校验解析后的令牌：{}", claims);
+        // 获取当前登入的学生的id号
+        Integer studentId = (Integer) claims.get("id");
+        student.setId(studentId);
+        if (recommandNewPost.countIntendedPostsByStuId(student.getId()) == 0) {
+            posts = recommandNewPost.getRecommandPostsPopular();
+            System.out.println(1);
+        }
+        else{
+            posts=recommandNewPost.getRecommandSpecificPostsPopular(student.getId());
+            System.out.println(2);
+        }
         return posts;
     }
 
