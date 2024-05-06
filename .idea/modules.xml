@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/aliyun-ai-api/aliyun-ai-api.iml" filepath="$PROJECT_DIR$/aliyun-ai-api/aliyun-ai-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/manager-identify/manager-identify.iml" filepath="$PROJECT_DIR$/manager-identify/manager-identify.iml" />
       <module fileurl="file://$PROJECT_DIR$/practice-springboot-starter.iml" filepath="$PROJECT_DIR$/practice-springboot-starter.iml" />
     </modules>

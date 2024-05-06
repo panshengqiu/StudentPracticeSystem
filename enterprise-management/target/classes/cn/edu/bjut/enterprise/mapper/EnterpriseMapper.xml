@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.edu.bjut.enterprise.mapper.EnterpriseMapper">
+
+    <update id="update">
+        update enterprise
+        set name=#{enterprise.name},
+            address=#{enterprise.address},
+            description=#{enterprise.description},
+            logo_url=#{enterprise.logoUrl},
+            credit_code=#{enterprise.creditCode}
+        where enterprise.id = (select firm_id from human_resource where human_resource.id = #{id})
+    </update>
+    <select id="select" resultType="map">
+        select enterprise.name,
+               enterprise.address,
+               enterprise.description,
+               enterprise.logo_url as logoUrl,
+               enterprise.credit_code as creditCode,
+               human_resource.department
+        from enterprise,
+             human_resource
+        where enterprise.id = human_resource.firm_id and
+                human_resource.id=#{id}
+    </select>
+</mapper>

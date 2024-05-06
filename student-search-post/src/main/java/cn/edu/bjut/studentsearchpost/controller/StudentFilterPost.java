@@ -1,6 +1,7 @@
 package cn.edu.bjut.studentsearchpost.controller;
 
 import cn.edu.bjut.entity.post.Post;
+import cn.edu.bjut.entity.post.PostAndEnterprise;
 import cn.edu.bjut.entity.post.PostFilter;
 import cn.edu.bjut.studentsearchpost.mapper.FilterPost;
 import lombok.extern.slf4j.Slf4j;
@@ -18,9 +19,9 @@ public class StudentFilterPost {
     @Autowired
     private  FilterPost filterPost;
     @PostMapping("/sendFilter")
-    public List<Post> getPostFilter(@RequestBody PostFilter postFilter){
+    public List<PostAndEnterprise> getPostFilter(@RequestBody PostFilter postFilter){
         System.out.println(postFilter);
-        List<Post> posts = null;
+        List<PostAndEnterprise> posts = null;
         //判断条件个数
         if (!Objects.equals(postFilter.getRegion(), "") &&Objects.equals(postFilter.getMonth(), "")&& Objects.equals(postFilter.getSalary(), "")){
             //岗位信息-只有地域条件时
