@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.edu.bjut.hrresumemanagement.mapper.HrResumeApprovalMapper">
+    <update id="updateResumeApprovalStage">
+        update resume_approval
+        set approval_stage_id = (select id
+                                 from approval_stage
+                                 where stage_name = #{resumeApprovalStage.stageName}
+                                   and status = #{resumeApprovalStage.status}),
+            update_time       = #{updateTime}
+        where resume_approval.id = #{id}
+    </update>
+
+    <select id="selectApprovalRecordOnId" resultType="java.util.Map">
+        select student.name              as studentName,
+               post.name                 as postName,
+               approval_stage.status     as currentStageStatus,
+               approval_stage.stage_name as currentStage
+        from student,
+             post,
+             approval_stage,
+             resume_approval,
+             submit,
+             resume
+        where resume_approval.id = #{id}
+          and resume_approval.submit_id = submit.id
+          and resume_approval.approval_stage_id = approval_stage.id
+          and submit.resume_id = resume.id
+          and resume.stu_id = student.id
+          and submit.post_id = post.id
+    </select>
+    <select id="selectApprovalRecordConditionally" resultType="java.util.Map">
+        select
+            submit.submit_time as submitTime,
+            resume.resume_url as resumeUrl,
+            resume.name as resumeName,
+            resume.stu_id as studentId,
+            student.head_url studentHeadUrl,
+            approval_stage.stage_name as approvalStageName,
+            resume_approval.approval_time as approvalTime,
+            resume_approval.update_time as approvalUpdateTime,
+            resume_approval.id as approvalId,
+            submit.id as submitId,
+            approval_stage.status
+        from
+            submit,
+            resume,
+            student,
+            post,
+            resume_approval,
+            approval_stage
+        where
+             submit.post_id = post.id
+            and resume_approval.submit_id = submit.id
+            and submit.resume_id = resume.id
+            and resume.stu_id = student.id
+            and approval_stage.id = resume_approval.approval_stage_id
+            <if test="resumeApprovalStage.stageName!=null and resumeApprovalStage.stageName!=''">
+                and approval_stage.stage_name = #{resumeApprovalStage.stageName}
+            </if>
+            <if test="resumeApprovalStage.status!=null and resumeApprovalStage.status!=''">
+                and approval_stage.status = #{resumeApprovalStage.status}
+            </if>
+            <if test="submit.resume.student.name!=null and submit.resume.student.name!=''">
+                and student.name = #{submit.resume.student.name}
+            </if>
+            <if test="submit.post.id!=null and submit.post.id!=''">
+                and post.id = #{submit.post.id}
+            </if>
+            <if test="submit.submitTime != null">
+                and Date(submit.submit_time) = Date(#{submit.submitTime})
+            </if>
+    </select>
+</mapper>

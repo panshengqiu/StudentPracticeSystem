@@ -4,15 +4,26 @@ import cn.edu.bjut.entity.hr.HumanResource;
 import cn.edu.bjut.entity.post.Post;
 import cn.edu.bjut.entity.post.PostSmallType;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public interface PostManagementService {
-    public  List<Map<Object, Object>> selectPostInfo(HumanResource humanResource);
+     List<Map<Object, Object>> selectPostInfo(HumanResource humanResource);
+     List<Map<Object, Object>> selectFirmPosts(HumanResource humanResource);
 
-    public Integer selectSmallPostIdOnName(PostSmallType postSmallType);
+    Integer selectSmallPostIdOnName(PostSmallType postSmallType);
 
-    public List<String> selectAllSmallTypeName();
+    Set<String> selectAllSmallTypeName();
+    Set<String> selectPostsWorkCities();
 
-    public Integer insertPost(Post post);
+    Integer insertPost(Post post);
+
+    List<Map<Object, Object>> getPostInfo(Post post);
+
+    Integer updatePostInfo(Post post);
+
+    List<Map<Object, Object>> queryPostCondition(Post post);
+
 }

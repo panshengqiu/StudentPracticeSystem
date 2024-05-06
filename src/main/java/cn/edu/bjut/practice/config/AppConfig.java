@@ -10,24 +10,26 @@ import cn.edu.bjut.oss.AliOSSUtils;
 
 
 @MapperScan("cn.edu.bjut.managerlogin.mapper")
-@MapperScan("cn.edu.bjut.enterpriseregister.mapper")
 @MapperScan("cn.edu.bjut.hrregister.mapper")
 @MapperScan("cn.edu.bjut.manageridentified.mapper")
 @MapperScan("cn.edu.bjut.studentregister.mapper")
 @MapperScan("cn.edu.bjut.practice.mapper")
 @MapperScan("cn.edu.bjut.hrpostmanagement.mapper")
+@MapperScan("cn.edu.bjut.studentsearchpost.mapper")
 @MapperScan("cn.edu.bjut.studentpostview.mapper")
 @MapperScan("cn.edu.bjut.postRecord.mapper")
 @MapperScan("cn.edu.bjut.studentsubmitresume.mapper")
 @MapperScan("cn.edu.bjut.produceresume.mapper")
-@MapperScan("cn.edu.bjut.studentsearchpost.mapper")
+@MapperScan("cn.edu.bjut.enterprise.mapper")
+@MapperScan("cn.edu.bjut.hrresumemanagement.mapper")
 @ComponentScan(basePackages = {"cn.edu.bjut.hrregister", "cn.edu.bjut.websocket",
         "cn.edu.bjut.interceptor", "cn.edu.bjut.result",
-        "cn.edu.bjut.managerlogin", "cn.edu.bjut.enterpriseregister",
+        "cn.edu.bjut.managerlogin","cn.edu.bjut.hrresumemanagement",
         "cn.edu.bjut.manageridentified", "cn.edu.bjut.oss", "cn.edu.bjut.jwt",
         "cn.edu.bjut.studentregister", "cn.edu.bjut.hrpostmanagement",
-        "cn.edu.bjut.studentsearchpost",
-        "cn.edu.bjut.entity","cn.edu.bjut.studentpostview","cn.edu.bjut.postRecord","cn.edu.bjut.studentsubmitresume", "cn.edu.bjut.produceresume"})
+        "cn.edu.bjut.entity","cn.edu.bjut.studentpostview","cn.edu.bjut.studentsearchpost",
+        "cn.edu.bjut.postRecord","cn.edu.bjut.studentsubmitresume",
+        "cn.edu.bjut.produceresume","cn.edu.bjut.enterprise"})
 @Configuration
 public class AppConfig {
     @Bean

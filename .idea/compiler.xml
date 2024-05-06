@@ -29,6 +29,8 @@
         <module name="manager-identify" />
         <module name="student-post-view" />
         <module name="hr-register" />
+        <module name="enterprise-management" />
+        <module name="hr-resume-management" />
         <module name="jwt-utils" />
         <module name="manager-login" />
         <module name="student-submit-resume" />
@@ -45,15 +47,15 @@
         <module name="student-resume-produce" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="17" />
   </component>
   <component name="JavacSettings">
-    <option name="PREFER_TARGET_JDK_COMPILER" value="false" />
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="ali-oss-utils" options="-parameters" />
+      <module name="enterprise-management" options="-parameters" />
       <module name="enterprise-register" options="-parameters" />
       <module name="hr-post-management" options="-parameters" />
       <module name="hr-register" options="-parameters" />
+      <module name="hr-resume-management" options="-parameters" />
       <module name="manager-identify" options="-parameters" />
       <module name="manager-login" options="-parameters" />
       <module name="parent-module" options="-parameters" />
@@ -64,7 +66,6 @@
       <module name="student-resume-produce" options="-parameters" />
       <module name="student-search-post" options="-parameters" />
       <module name="student-submit-resume" options="-parameters" />
-      <module name="websocket-chat" options="" />
     </option>
   </component>
 </project>

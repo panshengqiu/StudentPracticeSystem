@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.edu.bjut.hrpostmanagement.mapper.PostComplexSelectMapper">
+
+    <select id="selectDepartmentPosts" resultType="java.util.Map">
+        SELECT post.id, post.name,
+        post_small_type.name as postSmallTypeName, post.min_internship, post.pay, post.delivery_deadline, work_city, post.status
+        FROM post, post_small_type
+        WHERE post.hr_id = #{humanResource.id}
+        AND post.small_post_id = post_small_type.id
+        <if test="postTypes != null and postTypes.size() > 0">
+            AND post_small_type.name IN
+            <!-- 使用 foreach 标签遍历 postTypes 列表 -->
+            <foreach item="postType" index="index" collection="postTypes" open="(" separator="," close=")">
+                #{postType}
+            </foreach>
+        </if>
+        <if test="workCities != null and workCities.size() > 0">
+            AND post.work_city IN
+            <!-- 使用 foreach 标签遍历 workCities 列表 -->
+            <foreach item="workCity" index="index" collection="workCities" open="(" separator="," close=")">
+                #{workCity}
+            </foreach>
+        </if>
+        <if test="status != null and status != ''">
+            AND post.status = #{status}
+        </if>
+        ;
+    </select>
+
+    <select id="selectEnterprisePosts" resultType="java.util.Map">
+        SELECT post.id, post.name,
+        post_small_type.name as postSmallTypeName, post.min_internship, post.pay, post.delivery_deadline, work_city, post.status
+        FROM post, post_small_type
+        WHERE post.hr_id in (select id from human_resource where firm_id in (select firm_id from human_resource where
+        human_resource.id = #{humanResource.id}))
+        AND post.small_post_id = post_small_type.id
+        <if test="postTypes != null and postTypes.size() > 0">
+            AND post_small_type.name IN
+            <!-- 使用 foreach 标签遍历 postTypes 列表 -->
+            <foreach item="postType" index="index" collection="postTypes" open="(" separator="," close=")">
+                #{postType}
+            </foreach>
+        </if>
+        <if test="workCities != null and workCities.size() > 0">
+            AND post.work_city IN
+            <!-- 使用 foreach 标签遍历 workCities 列表 -->
+            <foreach item="workCity" index="index" collection="workCities" open="(" separator="," close=")">
+                #{workCity}
+            </foreach>
+        </if>
+        <if test="status != null and status != ''">
+            AND post.status = #{status}
+        </if>
+        ;
+    </select>
+    <select id="selectPostDetail" resultType="java.util.Map">
+        select post.name,
+               post.id,
+               post_small_type.name    as postSmallTypeName,
+               post.min_internship     as minInternship,
+               post.pay,
+               post.delivery_deadline  as deliveryDeadline,
+               post.work_city          as workCity,
+               post.workplace          as workPlace,
+               post.status,
+               post.description,
+               post.demand,
+               enterprise.name         as enterpriseName,
+               enterprise.logo_url     as enterpriseHeadLogoUrl,
+               human_resource.head_url as departmentHeadUrl,
+               human_resource.department
+        from post_small_type,
+             post,
+             enterprise,
+             human_resource
+        where post.id = #{id}
+          and post.small_post_id = post_small_type.id
+          and human_resource.id = post.hr_id
+          and human_resource.firm_id = enterprise.id
+    </select>
+</mapper>
